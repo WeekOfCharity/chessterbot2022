@@ -15,28 +15,28 @@ import asyncio
 ACCESS_TOKEN = "713jpa4s5jqa5inxf2zlxwlcpynj5r"
 CHANNEL_LIST = [
     'binakleinerals3',
-    'marlin_alt'
+    'marlinwoc'
 ]
 NEW_CHANNEL_LIST = [
     'nislregen',
-    'DerAltan',
-    'GumLong',
+    'deraltan',
+    'gumlong',
     'grandtriskel',
     'Fiesabella',
     'EpicEugen1',
     'ennieways',
     'sir_nightmare94',
     'BinaKleinerAls3',
-    'LisaNougat',
+    'lisanougat',
     'KurisuVanEdge',
-    'Emtes',
-    'Badingoregrill',
-    'Ananasatom',
+    'emtes',
+    'badingoregrill',
+    'miragaia_anco',
     'Placedelynn',
     'yambosoba',
     'theescarboom',
     'dosenpfirsiche',
-    'marlin_alt'
+    'marlinwoc'
 ]
 MSG_FREQ = 1800 # In Seconds
 
@@ -46,7 +46,7 @@ START_TIMESTAMP = datetime.fromtimestamp(1656777593)
 # Command texts
 HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter"
 FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/"
-SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.teepublic.com/de/user/weekofcharity"
+SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
 CHARITY_TEXT = "ZACK! Hier findet ihr Informationen zur Charity: https://weekofcharity.de/"
 SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/"
 TWITTER_TEXT = "ZACK! Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity"
@@ -54,6 +54,7 @@ DONATE_TEXT = "ZACK! Hier könnt ihr donaten: https://www.tipeeestream.com/week-
 YOUTUBE_TEXT = "ZACK! Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/channel/UCtDccnVlCVBNBo-icr13dfQ"
 GOALS_TEXT = "ZACK! Hier findet ihr alle Spendenziele: https://weekofcharity.de/"
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
+MUSIK_TEXT = "ZACK! Musik: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
 
 def woc_format_time(td):
     if td.days == 0 and td.seconds == 0:
@@ -161,7 +162,7 @@ class Bot(commands.Bot):
     async def charity(self, ctx: commands.Context):
         await ctx.send(CHARITY_TEXT)
 
-    @commands.command()
+    @commands.command(aliases=["programm", "program", "zeitplan"])
     async def schedule(self, ctx: commands.Context):
         await ctx.send(SCHEDULE_TEXT)
 
@@ -184,6 +185,10 @@ class Bot(commands.Bot):
     @commands.command(aliases=["webseite", "seite", "site", "about", "info", "woc"])
     async def website(self, ctx: commands.Context):
         await ctx.send(WEBSITE_TEXT)
+    
+    @commands.command(aliases=["musik"])
+    async def music(self, ctx: commands.Context):
+        await ctx.send(MUSIK_TEXT)
 
 
 if __name__ == '__main__':
