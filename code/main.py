@@ -44,7 +44,7 @@ MSG_FREQ = 1800 # In Seconds
 START_TIMESTAMP = datetime.fromtimestamp(1656777593)
 
 # Command texts
-HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter"
+HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter, musik"
 FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/"
 SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
 CHARITY_TEXT = "ZACK! Hier findet ihr Informationen zur Charity: https://weekofcharity.de/"
@@ -55,6 +55,7 @@ YOUTUBE_TEXT = "ZACK! Unser YouTube-Kanal für die Aufzeichnungen: https://www.y
 GOALS_TEXT = "ZACK! Hier findet ihr alle Spendenziele: https://weekofcharity.de/"
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
 MUSIK_TEXT = "ZACK! Musik: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
+VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/"
 
 def woc_format_time(td):
     if td.days == 0 and td.seconds == 0:
@@ -190,6 +191,9 @@ class Bot(commands.Bot):
     async def music(self, ctx: commands.Context):
         await ctx.send(MUSIK_TEXT)
 
+    @commands.command()
+    async def verlosung(self, ctx: commands.Context):
+        await ctx.send(VERLOSUNG_TEXT)
 
 if __name__ == '__main__':
     bot = Bot()
