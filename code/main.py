@@ -13,11 +13,11 @@ import math
 import asyncio
 
 ACCESS_TOKEN = "713jpa4s5jqa5inxf2zlxwlcpynj5r"
-CHANNEL_LIST = [
+TEST_CHANNEL_LIST = [
     'binakleinerals3',
     'marlinwoc'
 ]
-NEW_CHANNEL_LIST = [
+CHANNEL_LIST = [
     'nislregen',
     'deraltan',
     'gumlong',
