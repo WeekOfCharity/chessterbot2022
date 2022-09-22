@@ -45,7 +45,7 @@ START_TIMESTAMP = datetime.fromtimestamp(1656777593)
 
 # Command texts
 HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter, musik"
-FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/"
+FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
 SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
 CHARITY_TEXT = "ZACK! Hier findet ihr Informationen zur Charity: https://weekofcharity.de/"
 SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/"
@@ -134,8 +134,7 @@ class Bot(commands.Bot):
     async def event_message(self, msg):
         if msg.echo:
             return
-        print(msg.author.name)
-        print(msg.content)
+        print("{}: {}".format(msg.author.name, msg.content))
         await self.handle_commands(msg)
     
     ####################################
