@@ -1,3 +1,5 @@
+# ChessterBot created by Bina and Marlin for the Week of Charity 2022
+
 # TODO:
 # - Automatisch reconnecten bei Verbindungsverlust (Vielleicht nicht nötig)
 
