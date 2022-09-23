@@ -50,7 +50,7 @@ GOALS_TEXT = "ZACK! Hier findet ihr alle Spendenziele: https://weekofcharity.de/
 SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
 YOUTUBE_TEXT = "ZACK! Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/channel/UCtDccnVlCVBNBo-icr13dfQ"
 TWITTER_TEXT = "ZACK! Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity"
-
+TIKTOK_TEXT = "ZACK! Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity"
 
 MUSIK_TEXT = "ZACK! Die Musik für dieses Jahr wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
 VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/#faq"
@@ -198,6 +198,10 @@ class Bot(commands.Bot):
     @commands.command(aliases=["yt"])
     async def youtube(self, ctx: commands.Context):
         await ctx.send(YOUTUBE_TEXT)
+
+    @commands.command()
+    async def tiktok(self, ctx: commands.Context):
+        await ctx.send(TIKTOK_TEXT)
 
     @commands.command(aliases=["donationgoals", "goal", "spendenziele", "spendenziel", "ziele"])
     async def goals(self, ctx: commands.Context):
