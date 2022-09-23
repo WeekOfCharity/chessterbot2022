@@ -38,7 +38,7 @@ MSG_FREQ = 1800 # In Seconds
 START_TIMESTAMP = datetime.fromtimestamp(1663884000) # Beginn des Tages 23.09.
 
 # Command texts
-HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter, musik, verlosung, bidwar"
+HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, programm, charity, donate, goals, uptime, shop, youtube, twitter, musik, verlosung, bidwar"
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
 FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
 SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams"
@@ -60,7 +60,7 @@ HELLO_TEXT = "ZACK! Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle v
 # TODO
 AUSTRIA_HELLO_TEXT = "ZACKL! Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen."
 BAYRISCH_HELLO_TEXT = "ZACK! Servus, i bin ChessterBot! Mit !help konnst du dir alle verfügbaren Commands ozoagn lassn."
-SCHWEIZER_HELLO_TEXT = "Schweizer"
+SCHWEIZER_HELLO_TEXT = "ZAGG! Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh."
 LUXEMBURGISCH_HELLO_TEXT = "ZACK! Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen."
 
 SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT, TWITTER_TEXT]
@@ -199,7 +199,7 @@ class Bot(commands.Bot):
     async def youtube(self, ctx: commands.Context):
         await ctx.send(YOUTUBE_TEXT)
 
-    @commands.command(aliases=["goal", "spendenziele", "spendenziel"])
+    @commands.command(aliases=["donationgoals", "goal", "spendenziele", "spendenziel", "ziele"])
     async def goals(self, ctx: commands.Context):
         await ctx.send(GOALS_TEXT)
 
@@ -234,6 +234,10 @@ class Bot(commands.Bot):
     @commands.command(aliases=["griaßdi", "grüßgott"])
     async def servas(self, ctx: commands.Context):
         await ctx.send(AUSTRIA_HELLO_TEXT)
+    
+    @commands.command()
+    async def grüezi(self, ctx: commands.Context):
+        await ctx.send(SCHWEIZER_HELLO_TEXT)
     
 
 if __name__ == '__main__':
