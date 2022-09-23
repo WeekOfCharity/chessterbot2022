@@ -15,8 +15,8 @@ import argparse
 import random
 
 ACCESS_TOKEN = "713jpa4s5jqa5inxf2zlxwlcpynj5r"
-CHANNEL_LIST = ['binakleinerals3', 'marlinwoc']
-ACHANNEL_LIST = [
+# CHANNEL_LIST = ['binakleinerals3', 'marlinwoc']
+CHANNEL_LIST = [
     'nislregen',
     'deraltan',
     'gumlong',
