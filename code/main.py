@@ -35,7 +35,7 @@ CHANNEL_LIST = [
 MSG_FREQ = 1800 # In Seconds
 
 # 1664103600 -> 25. September 2022 13:00:00 GMT+02:00 (Beginn der WoC)
-START_TIMESTAMP = datetime.fromtimestamp(1663884000) # Beginn des Tages 23.09.
+START_TIMESTAMP = datetime.fromtimestamp(1664103600)
 
 # Command texts
 HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, programm, charity, donate, goals, uptime, shop, youtube, twitter, musik, verlosung, bidwar"
