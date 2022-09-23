@@ -59,7 +59,7 @@ HELLO_TEXT = "ZACK! Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle v
 
 # TODO
 AUSTRIA_HELLO_TEXT = "ZACKL! Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen."
-BAYRISCH_HELLO_TEXT = "ZACK! Servus, i bin ChessterBot! Mit !help konnst du dir alle verfügbaren Commands ozoagn lassn."
+BAYRISCH_HELLO_TEXT = "ZACK! Servus, i bin ChessterBot! Mit '!help' konnst du dir alle verfügbaren Commands ozoagn lassn."
 SCHWEIZER_HELLO_TEXT = "ZAGG! Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh."
 LUXEMBURGISCH_HELLO_TEXT = "ZACK! Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen."
 
