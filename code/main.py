@@ -12,6 +12,7 @@ import time
 import math
 import asyncio
 import argparse
+import random
 
 ACCESS_TOKEN = "713jpa4s5jqa5inxf2zlxwlcpynj5r"
 CHANNEL_LIST = ['binakleinerals3', 'marlinwoc']
@@ -42,21 +43,33 @@ MSG_FREQ = 1800 # In Seconds
 START_TIMESTAMP = datetime.fromtimestamp(1663884000) # Beginn des Tages 23.09.
 
 # Command texts
-HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter, musik"
-FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
-SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
-CHARITY_TEXT = "ZACK! Hier findet ihr Informationen zur Charity: https://weekofcharity.de/"
-SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/"
-TWITTER_TEXT = "ZACK! Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity"
-DONATE_TEXT = "ZACK! Hier könnt ihr donaten: https://www.tipeeestream.com/week-of-charity/donation"
-YOUTUBE_TEXT = "ZACK! Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/channel/UCtDccnVlCVBNBo-icr13dfQ"
-GOALS_TEXT = "ZACK! Hier findet ihr alle Spendenziele: https://weekofcharity.de/"
+HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter, musik, verlosung, bidwar"
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
-MUSIK_TEXT = "ZACK! Musik: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
-VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/"
+FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
+SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams"
+CHARITY_TEXT = "ZACK! Hier findet ihr Informationen zur Charity: https://weekofcharity.de/team?id=28"
+DONATE_TEXT = "ZACK! Hier könnt ihr donaten: https://www.tipeeestream.com/week-of-charity/donation"
+GOALS_TEXT = "ZACK! Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden"
+SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
+YOUTUBE_TEXT = "ZACK! Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/channel/UCtDccnVlCVBNBo-icr13dfQ"
+TWITTER_TEXT = "ZACK! Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity"
+
+
+MUSIK_TEXT = "ZACK! Die Musik für dieses Jahr wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
+VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/#faq"
 BIDWAR_TEXT = "ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt ihr in Form von Donations beeinflussen. Mehr Infos in unserem FAQ: https://weekofcharity.de/#faq"
 
+# Other texts
 HELLO_TEXT = "ZACK! Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
+
+# TODO
+AUSTRIA_HELLO_TEXT = "Austria"
+BAYRISCH_HELLO_TEXT = "ZACK! Servus, i bin ChessterBot! Mit !help konnst du dir alle verfügbaren Commands ozoagn lassn."
+SCHWEIZER_HELLO_TEXT = "Schweizer"
+LUXEMBURGISCH_HELLO_TEXT = "ZACK! Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen. "
+
+SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT, TWITTER_TEXT]
+
 
 def woc_format_time(td):
     if td.days == 0 and td.seconds == 0:
@@ -133,12 +146,14 @@ class Bot(commands.Bot):
             await fetch_streams_task
             streams = fetch_streams_task.result()
 
+            # Choose random message
+            random_message = random.choice(SCHEDULED_MESSAGES)
+            
             # Send a message to all live channels
             for s in streams:
                 if s.type == "live":
                     channel = self.get_channel(s.user.name)
-                    # TODO: Other scheduled messages?
-                    await channel.send(WEBSITE_TEXT)
+                    await channel.send(random_message)
                     print("Sent scheduled message to live channel {}".format(s.user.name))
 
     async def event_message(self, msg):
@@ -197,21 +212,29 @@ class Bot(commands.Bot):
     async def website(self, ctx: commands.Context):
         await ctx.send(WEBSITE_TEXT)
     
-    @commands.command(aliases=["musik"])
+    @commands.command(aliases=["musik", "56"])
     async def music(self, ctx: commands.Context):
         await ctx.send(MUSIK_TEXT)
 
-    @commands.command()
+    @commands.command(aliases=["verlosungen", "gewinnspiel"])
     async def verlosung(self, ctx: commands.Context):
         await ctx.send(VERLOSUNG_TEXT)
     
-    @commands.command()
+    @commands.command(aliases=["haare", "eugen", "eugenshaare"])
     async def bidwar(self, ctx: commands.Context):
         await ctx.send(BIDWAR_TEXT)
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
         await ctx.send(HELLO_TEXT)
+
+    @commands.command()
+    async def servus(self, ctx: commands.Context):
+        await ctx.send(BAYRISCH_HELLO_TEXT)
+    
+    @commands.command()
+    async def moien(self, ctx: commands.Context):
+        await ctx.send(LUXEMBURGISCH_HELLO_TEXT)
     
 
 if __name__ == '__main__':
