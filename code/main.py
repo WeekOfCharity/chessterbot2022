@@ -11,13 +11,11 @@ from datetime import *
 import time
 import math
 import asyncio
+import argparse
 
 ACCESS_TOKEN = "713jpa4s5jqa5inxf2zlxwlcpynj5r"
-TEST_CHANNEL_LIST = [
-    'binakleinerals3',
-    'marlinwoc'
-]
-CHANNEL_LIST = [
+CHANNEL_LIST = ['binakleinerals3', 'marlinwoc']
+ACHANNEL_LIST = [
     'nislregen',
     'deraltan',
     'gumlong',
@@ -40,8 +38,8 @@ CHANNEL_LIST = [
 ]
 MSG_FREQ = 1800 # In Seconds
 
-# 1664031600 -> 24. September 2022 17:00:00 GMT+02:00
-START_TIMESTAMP = datetime.fromtimestamp(1656777593)
+# 1664103600 -> 25. September 2022 13:00:00 GMT+02:00 (Beginn der WoC)
+START_TIMESTAMP = datetime.fromtimestamp(1663884000) # Beginn des Tages 23.09.
 
 # Command texts
 HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, schedule, charity, donate, goals, uptime, shop, youtube, twitter, musik"
@@ -56,6 +54,9 @@ GOALS_TEXT = "ZACK! Hier findet ihr alle Spendenziele: https://weekofcharity.de/
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
 MUSIK_TEXT = "ZACK! Musik: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
 VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/"
+BIDWAR_TEXT = "ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt ihr in Form von Donations beeinflussen. Mehr Infos in unserem FAQ: https://weekofcharity.de/#faq"
+
+HELLO_TEXT = "ZACK! Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
 
 def woc_format_time(td):
     if td.days == 0 and td.seconds == 0:
@@ -100,10 +101,11 @@ def woc_format_time(td):
 
 class Bot(commands.Bot):
 
-    def __init__(self):
+    def __init__(self, hello_msg):
         # Initialise our Bot with our access token, prefix and a list of channels to join on boot...
         # prefix can be a callable, which returns a list of strings or a string...
         # initial_channels can also be a callable which returns a list of strings...
+        self.hello_msg = hello_msg
         super().__init__(token=ACCESS_TOKEN, prefix='!', initial_channels=CHANNEL_LIST)
 
     async def event_ready(self):
@@ -111,6 +113,14 @@ class Bot(commands.Bot):
         # We are logged in and ready to chat and use commands...
         print(f'Logged in as | {self.nick}')
         print(f'User id is | {self.user_id}')
+
+        if self.hello_msg:
+            self.hello_msg == False
+            # Send a hello message to every channel
+            for c in CHANNEL_LIST:
+                channel = self.get_channel(c)
+                await channel.send(HELLO_TEXT)
+                print("Sent hello message @ ({})".format(c))
 
         while True:
             # Calculate time until next scheduled message.
@@ -133,8 +143,9 @@ class Bot(commands.Bot):
 
     async def event_message(self, msg):
         if msg.echo:
+            print('[ChessterBot] @ ({}): "{}"'.format(msg.channel.name, msg.content))
             return
-        print("{}: {}".format(msg.author.name, msg.content))
+        print('[{}] @ ({}): "{}"'.format(msg.author.name, msg.channel.name, msg.content))
         await self.handle_commands(msg)
     
     ####################################
@@ -193,9 +204,24 @@ class Bot(commands.Bot):
     @commands.command()
     async def verlosung(self, ctx: commands.Context):
         await ctx.send(VERLOSUNG_TEXT)
+    
+    @commands.command()
+    async def bidwar(self, ctx: commands.Context):
+        await ctx.send(BIDWAR_TEXT)
+
+    @commands.command()
+    async def hello(self, ctx: commands.Context):
+        await ctx.send(HELLO_TEXT)
+    
 
 if __name__ == '__main__':
-    bot = Bot()
+    print("Initialize ChessterBot...")
+    parser = argparse.ArgumentParser(description='Week of Charity 2022 Twitch Chat Bot "ChessterBot".')
+    parser.add_argument('-hello', '--hello_msg', default=False, action='store_true', help='Enable "Hello Message" in all chats the bot loggs into.')
+    args = parser.parse_args()
+    print("Hello Enabled {}".format(args.hello_msg))
+
+    bot = Bot(args.hello_msg)
     print("Starting ChessterBot...")
     bot.run()
 # bot.run() is blocking and will stop execution of any below code here until stopped or closed.
