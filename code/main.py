@@ -220,7 +220,7 @@ class Bot(commands.Bot):
         await ctx.send(BIDWAR_TEXT)
 
     @commands.command()
-    async def hello(self, ctx: commands.Context):
+    async def hallo(self, ctx: commands.Context):
         await ctx.send(HELLO_TEXT)
 
     @commands.command()
