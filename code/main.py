@@ -164,7 +164,7 @@ class Bot(commands.Bot):
     async def uptime(self, ctx: commands.Context):
         await ctx.send(woc_format_time(datetime.now() - START_TIMESTAMP))
 
-    @commands.command()
+    @commands.command(aliases=["commands"])
     async def help(self, ctx: commands.Context):
         await ctx.send(HELP_TEXT)
 
