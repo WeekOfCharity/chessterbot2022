@@ -58,10 +58,10 @@ BIDWAR_TEXT = "ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt 
 HELLO_TEXT = "ZACK! Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
 
 # TODO
-AUSTRIA_HELLO_TEXT = "Austria"
+AUSTRIA_HELLO_TEXT = "ZACKL! Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen."
 BAYRISCH_HELLO_TEXT = "ZACK! Servus, i bin ChessterBot! Mit !help konnst du dir alle verfügbaren Commands ozoagn lassn."
 SCHWEIZER_HELLO_TEXT = "Schweizer"
-LUXEMBURGISCH_HELLO_TEXT = "ZACK! Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen. "
+LUXEMBURGISCH_HELLO_TEXT = "ZACK! Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen."
 
 SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT, TWITTER_TEXT]
 
@@ -230,6 +230,10 @@ class Bot(commands.Bot):
     @commands.command()
     async def moien(self, ctx: commands.Context):
         await ctx.send(LUXEMBURGISCH_HELLO_TEXT)
+    
+    @commands.command(aliases=["griaßdi", "grüßgott"])
+    async def servas(self, ctx: commands.Context):
+        await ctx.send(AUSTRIA_HELLO_TEXT)
     
 
 if __name__ == '__main__':
