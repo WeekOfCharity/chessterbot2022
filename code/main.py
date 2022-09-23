@@ -40,7 +40,7 @@ MSG_FREQ = 1800 # In Seconds
 START_TIMESTAMP = datetime.fromtimestamp(1664103600)
 
 # Command texts
-HELP_TEXT = "ZACK! Folgende commands sind verfügbar: website, faq, programm, charity, donate, goals, uptime, shop, youtube, twitter, musik, verlosung, bidwar"
+HELP_TEXT = "ZACK! Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !uptime, !shop, !youtube, !twitter, !musik, !verlosung, !bidwar"
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
 FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
 SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams"
@@ -58,8 +58,6 @@ BIDWAR_TEXT = "ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt 
 
 # Other texts
 HELLO_TEXT = "ZACK! Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
-
-# TODO
 AUSTRIA_HELLO_TEXT = "ZACKL! Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen."
 BAYRISCH_HELLO_TEXT = "ZACK! Servus, i bin ChessterBot! Mit '!help' konnst du dir alle verfügbaren Commands ozoagn lassn."
 SCHWEIZER_HELLO_TEXT = "ZAGG! Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh."
