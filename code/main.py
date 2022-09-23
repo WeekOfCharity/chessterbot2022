@@ -1,10 +1,5 @@
 # TODO:
-# - Automatisch reconnecten bei Verbindungsverlust
-# - Git outfiguren sodass Änderungen schnell möglich sind
-
-# - Richtigen geplanten START_TIMESTAMP ändern
-# - Liste aller Kanäle adden
-# - Längerer Test auf mehreren Kanälen
+# - Automatisch reconnecten bei Verbindungsverlust (Vielleicht nicht nötig)
 
 from twitchio.ext import commands
 from datetime import *
