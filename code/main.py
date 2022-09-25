@@ -40,7 +40,7 @@ MSG_FREQ = 1800 # In Seconds
 START_TIMESTAMP = datetime.fromtimestamp(1664103600)
 
 # Command texts
-HELP_TEXT = "ZACK! Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !uptime, !shop, !youtube, !twitter, !musik, !verlosung, !bidwar"
+HELP_TEXT = "ZACK! Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !uptime, !shop, !socials, !youtube, !twitter, !tiktok, !musik, !verlosung, !bidwar"
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
 FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
 SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams"
@@ -48,6 +48,7 @@ CHARITY_TEXT = "ZACK! Hier findet ihr Informationen zur Charity: https://weekofc
 DONATE_TEXT = "ZACK! Hier könnt ihr donaten: https://www.tipeeestream.com/week-of-charity/donation"
 GOALS_TEXT = "ZACK! Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden"
 SHOP_TEXT = "ZACK! Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
+SOCIALS_TEXT = "ZACK! Folgt uns auf YouTube: https://www.youtube.com/channel/UCtDccnVlCVBNBo-icr13dfQ - Twitter: https://twitter.com/WeekOfCharity - TikTok: https://www.tiktok.com/@weekofcharity"
 YOUTUBE_TEXT = "ZACK! Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/channel/UCtDccnVlCVBNBo-icr13dfQ"
 TWITTER_TEXT = "ZACK! Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity"
 TIKTOK_TEXT = "ZACK! Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity"
@@ -58,7 +59,7 @@ BIDWAR_TEXT = "ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt 
 VERLOSUNG_SVEN_TEXT = "Am Ende des Pen and Paper-Abenteuers am Mittwoch könnt ihr einen Key für Wonderdraft gewinnen! Mithilfe dieser Software könnt ihr atemberaubende Karten für eure fiktiven Welten oder auch einfach zum Spaß erstellen!"
 VERLOSUNG_EUGEN_TEXT = "Wie ihr an Eugens Verlosung teilnehmt, kann nur Eugen euch sagen!"
 VERLOSUNG_LISA_TEXT = "Am Ende des Glass Painting Streams könnt ihr das fertige Kunstwerk gewinnen! Ein Stück Week of Charity-Geschichte für euer Wohnzimmer!"
-VERLOSUNG_LUCA_TEXT = "Wie ihr an Lucas Verlosung teilnehmt, kann nur Luca euch sagen!"
+VERLOSUNG_LUCA_TEXT = "Am Donnerstag zwischen 12-15 Uhr könnt ihr hier zwei Steam-Keys für Guts and Goals, den Mix aus Fußball und Beat-em-up, gewinnen! Diese Keys wurden uns extra vom Entwickler zur Verfügung gestellt und werden spontan verlost, also haltet die Ohren offen!"
 VERLOSUNG_CHRIS_TEXT = "Auf dem Glücksrad findet man neben einer Ansammlung großartiger Spiele, die von Chris gespielt werden, auch großartige Spiele, die verlost werden! Wenn das Rad darauf landet, wird sofort eine Verlosung abgehalten. Also spendet auf keinen Fall, sonst muss Chris immer wieder drehen!"
 VERLOSUNG_FELI_TEXT = "Falls ihr Freude am Kreativen habt, könnt ihr hier 3 Keys für Guts and Goals auf Steam gewinnen. Die Gewinner werden hier nicht per Zufall ermittelt, sondern über die besten Bauten des Minecraft Servers! Schaut für nähere Infos einfach auf dem Server WeekOfCharity.mine-hoster.net vorbei und schaltet ein, wenn Feli am Freitag die Projekte bewertet! Ihr müsst beim Stream nicht anwesend sein, um zu gewinnen."
 VERLOSUNG_NOAH_TEXT = "Der Schachstream ist immer voller Highlights, und diesmal gibt es sogar ein Neues obendrauf: Die ersten drei Personen, die Noah in den Zuschauerpartien Matt setzen können, erhalten ihre Wahl aus den Spielen Chess Ultra, UNDERTALE und Slay the Spire! Wer zuerst gewinnt, mahlt zuerst!"
@@ -282,6 +283,10 @@ class Bot(commands.Bot):
     @commands.command(aliases=["VerlosungFinale", "verlosungFinale"])
     async def verlosungfinale(self, ctx: commands.Context):
         await ctx.send(VERLOSUNG_FINALE_TEXT)
+
+    @commands.command()
+    async def socials(self, ctx: commands.Context):
+        await ctx.send(SOCIALS_TEXT)
     
 
 if __name__ == '__main__':
