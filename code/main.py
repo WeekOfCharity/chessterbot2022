@@ -54,7 +54,7 @@ TWITTER_TEXT = "ZACK! Hier gibt es die neusten Tweets: https://twitter.com/WeekO
 TIKTOK_TEXT = "ZACK! Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity"
 MUSIK_TEXT = "ZACK! Die Musik für dieses Jahr wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
 VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/#faq"
-BIDWAR_TEXT = 'ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt ihr in Form von Donations beeinflussen. Die Optionen sind Hellblau/Rosa "Trans", Lila/Gelb "Nonbinary" oder "Grün/Pink Splatoon 2". Mehr Infos in unserem FAQ: https://weekofcharity.de/#faq'
+BIDWAR_TEXT = 'ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt ihr in Form von Donations beeinflussen. Die Optionen sind Hellblau/Rosa "Trans", Lila/Gelb "Nonbinary" oder Grün/Pink "Splatoon 2". Mehr Infos in unserem FAQ: https://weekofcharity.de/#faq'
 
 VERLOSUNG_SVEN_TEXT = "Am Ende des Pen and Paper-Abenteuers am Mittwoch könnt ihr einen Key für Wonderdraft gewinnen! Mithilfe dieser Software könnt ihr atemberaubende Karten für eure fiktiven Welten oder auch einfach zum Spaß erstellen!"
 VERLOSUNG_EUGEN_TEXT = "Wie ihr an Eugens Verlosung teilnehmt, kann nur Eugen euch sagen!"
