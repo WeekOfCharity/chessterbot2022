@@ -57,7 +57,7 @@ VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im
 BIDWAR_TEXT = "ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt ihr in Form von Donations beeinflussen. Mehr Infos in unserem FAQ: https://weekofcharity.de/#faq"
 
 VERLOSUNG_SVEN_TEXT = "Am Ende des Pen and Paper-Abenteuers am Mittwoch könnt ihr einen Key für Wonderdraft gewinnen! Mithilfe dieser Software könnt ihr atemberaubende Karten für eure fiktiven Welten oder auch einfach zum Spaß erstellen!"
-VERLOSUNG_EUGEN_TEXT = "Wie ihr an Eugens Verlosung teilnehmt, kann nur Eugen euch sagen!"
+VERLOSUNG_EUGEN_TEXT = "Bei Eugen wird eure Switch bereichert! Gewinnen könnt ihr am Dienstag zwischen 04:00-07:00 Uhr Pokémon Schillernde Perle, am Donnerstag zwischen 05:00-08:00 Uhr Paper Mario: The Origami King und am Freitag zwischen 08:00-11:00 Uhr The Legend of Zelda: Skyward Sword HD!"
 VERLOSUNG_LISA_TEXT = "Am Ende des Glass Painting Streams könnt ihr das fertige Kunstwerk gewinnen! Ein Stück Week of Charity-Geschichte für euer Wohnzimmer!"
 VERLOSUNG_LUCA_TEXT = "Am Donnerstag zwischen 12-15 Uhr könnt ihr hier zwei Steam-Keys für Guts and Goals, den Mix aus Fußball und Beat-em-up, gewinnen! Diese Keys wurden uns extra vom Entwickler zur Verfügung gestellt und werden spontan verlost, also haltet die Ohren offen!"
 VERLOSUNG_CHRIS_TEXT = "Auf dem Glücksrad findet man neben einer Ansammlung großartiger Spiele, die von Chris gespielt werden, auch großartige Spiele, die verlost werden! Wenn das Rad darauf landet, wird sofort eine Verlosung abgehalten. Also spendet auf keinen Fall, sonst muss Chris immer wieder drehen!"
