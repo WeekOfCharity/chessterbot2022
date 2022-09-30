@@ -72,6 +72,8 @@ BAYRISCH_HELLO_TEXT = "ZACK! Servus, i bin ChessterBot! Mit '!help' konnst du di
 SCHWEIZER_HELLO_TEXT = "ZAGG! Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh."
 LUXEMBURGISCH_HELLO_TEXT = "ZACK! Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen."
 
+SCHALTSEKUNDEN_TEXT = "ZACK! Wenn ihr Interesse an Schaltsekunden habt, schaut hier rein: https://de.wikipedia.org/wiki/Schaltsekunde"
+
 SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT, TWITTER_TEXT]
 
 
@@ -287,6 +289,10 @@ class Bot(commands.Bot):
     @commands.command()
     async def socials(self, ctx: commands.Context):
         await ctx.send(SOCIALS_TEXT)
+
+    @commands.command(aliases=["schaltminute", "schaltminuten", "schaltsekunde"])
+    async def schaltsekunden(self, ctx: commands.Context):
+        await ctx.send(SCHALTSEKUNDEN_TEXT)
     
 
 if __name__ == '__main__':
