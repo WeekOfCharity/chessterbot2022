@@ -55,6 +55,7 @@ TIKTOK_TEXT = "ZACK! Folgt uns auf TikTok für lustige Clips: https://www.tiktok
 MUSIK_TEXT = "ZACK! Die Musik für dieses Jahr wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
 VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/#faq"
 BIDWAR_TEXT = 'ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt ihr in Form von Donations beeinflussen. Die Optionen sind Hellblau/Rosa "Trans", Lila/Gelb "Nonbinary" oder Grün/Pink "Splatoon 2". Mehr Infos in unserem FAQ: https://weekofcharity.de/#faq'
+SCHACHSTREAM_TEXT = 'ZACK! Den Plan für den Schachstream findet ihr hier: https://twitter.com/wizomibaby/status/1575933168808386560?t=kEX6klwSywFFnRJnqGIrEw&s=19'
 
 VERLOSUNG_SVEN_TEXT = "Am Ende des Pen and Paper-Abenteuers am Mittwoch könnt ihr einen Key für Wonderdraft gewinnen! Mithilfe dieser Software könnt ihr atemberaubende Karten für eure fiktiven Welten oder auch einfach zum Spaß erstellen!"
 VERLOSUNG_EUGEN_TEXT = "Bei Eugen wird eure Switch bereichert! Gewinnen könnt ihr am Dienstag zwischen 04:00-07:00 Uhr Pokémon Schillernde Perle, am Donnerstag zwischen 05:00-08:00 Uhr Paper Mario: The Origami King und am Freitag zwischen 08:00-11:00 Uhr The Legend of Zelda: Skyward Sword HD!"
@@ -294,6 +295,9 @@ class Bot(commands.Bot):
     async def schaltsekunden(self, ctx: commands.Context):
         await ctx.send(SCHALTSEKUNDEN_TEXT)
     
+    @commands.command(aliases=["schach", "schachstreamplan", "schachstreamschedule"])
+    async def schachstream(self, ctx: commands.Context):
+        await ctx.send(SCHACHSTREAM_TEXT)
 
 if __name__ == '__main__':
     print("Initialize ChessterBot...")
