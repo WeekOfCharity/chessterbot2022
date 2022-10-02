@@ -309,6 +309,7 @@ if __name__ == '__main__':
     if len(args.token) < 1:
         print("Please specify a valid Token for the Twitch API.")
         exit(1)
+        # Alternatively, if no token is provided, read one from .env File 
     print("Hello Enabled {}".format(args.hello_msg))
 
     bot = Bot(args.token, args.hello_msg)
