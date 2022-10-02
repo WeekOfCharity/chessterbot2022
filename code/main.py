@@ -1,8 +1,5 @@
 # ChessterBot created by Bina and Marlin for the Week of Charity 2022
 
-# TODO:
-# - Automatisch reconnecten bei Verbindungsverlust (Vielleicht nicht nötig)
-
 from twitchio.ext import commands
 from datetime import *
 import time
@@ -11,7 +8,6 @@ import asyncio
 import argparse
 import random
 
-ACCESS_TOKEN = "713jpa4s5jqa5inxf2zlxwlcpynj5r"
 # CHANNEL_LIST = ['binakleinerals3', 'marlinwoc']
 CHANNEL_LIST = [
     'nislregen',
@@ -36,7 +32,7 @@ CHANNEL_LIST = [
 ]
 MSG_FREQ = 1800 # In Seconds
 
-# 1664103600 -> 25. September 2022 13:00:00 GMT+02:00 (Beginn der WoC)
+# 1664103600 -> 25. September 2022 13:00:00 GMT+02:00 (Beginn der WoC2022)
 START_TIMESTAMP = datetime.fromtimestamp(1664103600)
 
 # Command texts
@@ -121,12 +117,17 @@ def woc_format_time(td):
 
 class Bot(commands.Bot):
 
-    def __init__(self, hello_msg):
+    def __init__(self, APItoken, hello_msg):
         # Initialise our Bot with our access token, prefix and a list of channels to join on boot...
         # prefix can be a callable, which returns a list of strings or a string...
         # initial_channels can also be a callable which returns a list of strings...
+        self.APItoken = APItoken
         self.hello_msg = hello_msg
-        super().__init__(token=ACCESS_TOKEN, prefix='!', initial_channels=CHANNEL_LIST)
+        try:
+            super().__init__(token=APItoken, prefix='!', initial_channels=CHANNEL_LIST)
+        except:
+            print("Error while setting up Bot Object. It's possible the Token provided is invalid.")
+            exit(1)
 
     async def event_ready(self):
         # Notify us when everything is ready!
@@ -303,10 +304,14 @@ if __name__ == '__main__':
     print("Initialize ChessterBot...")
     parser = argparse.ArgumentParser(description='Week of Charity 2022 Twitch Chat Bot "ChessterBot".')
     parser.add_argument('-hello', '--hello_msg', default=False, action='store_true', help='Enable "Hello Message" in all chats the bot loggs into.')
+    parser.add_argument('--token', type=str, default='', help='Token for Twitch API.')
     args = parser.parse_args()
+    if len(args.token) < 1:
+        print("Please specify a valid Token for the Twitch API.")
+        exit(1)
     print("Hello Enabled {}".format(args.hello_msg))
 
-    bot = Bot(args.hello_msg)
+    bot = Bot(args.token, args.hello_msg)
     print("Starting ChessterBot...")
     bot.run()
 # bot.run() is blocking and will stop execution of any below code here until stopped or closed.
