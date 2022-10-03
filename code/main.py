@@ -1,5 +1,7 @@
 # ChessterBot created by Bina and Marlin for the Week of Charity 2022
 
+from multiprocessing import AuthenticationError
+from dotenv import load_dotenv
 from twitchio.ext import commands
 from datetime import *
 import time
@@ -7,8 +9,8 @@ import math
 import asyncio
 import argparse
 import random
+import os
 
-# CHANNEL_LIST = ['binakleinerals3', 'marlinwoc']
 CHANNEL_LIST = [
     'nislregen',
     'deraltan',
@@ -81,6 +83,9 @@ def woc_format_time(td):
     if td.days < 0:
         return "ZACK! Die Week of Charity liegt in der Zukunft!"
 
+    if td.days > 8:
+        return "ZACK! Die Week of Charity ist vorbei!"
+
     seconds = td.seconds % 60
     minutes = math.floor(td.seconds / 60) % 60
     hours = math.floor(td.seconds / 3600)
@@ -117,17 +122,13 @@ def woc_format_time(td):
 
 class Bot(commands.Bot):
 
-    def __init__(self, APItoken, hello_msg):
+    def __init__(self, api_token, hello_msg):
         # Initialise our Bot with our access token, prefix and a list of channels to join on boot...
         # prefix can be a callable, which returns a list of strings or a string...
         # initial_channels can also be a callable which returns a list of strings...
-        self.APItoken = APItoken
+        self.api_token = api_token
         self.hello_msg = hello_msg
-        try:
-            super().__init__(token=APItoken, prefix='!', initial_channels=CHANNEL_LIST)
-        except:
-            print("Error while setting up Bot Object. It's possible the Token provided is invalid.")
-            exit(1)
+        super().__init__(token=api_token, prefix='!', initial_channels=CHANNEL_LIST)
 
     async def event_ready(self):
         # Notify us when everything is ready!
@@ -143,10 +144,10 @@ class Bot(commands.Bot):
                 await channel.send(HELLO_TEXT)
                 print("Sent hello message @ ({})".format(c))
 
+        # Random scheduled messages
         while True:
             # Calculate time until next scheduled message.
             s = MSG_FREQ - time.time() % MSG_FREQ
-            print("Es sind noch {} Sekunden zur nächsten Nachricht.".format(s))
             await asyncio.sleep(s)
             
             # Get a list of all streams that are currently live.
@@ -306,13 +307,22 @@ if __name__ == '__main__':
     parser.add_argument('-hello', '--hello_msg', default=False, action='store_true', help='Enable "Hello Message" in all chats the bot loggs into.')
     parser.add_argument('--token', type=str, default='', help='Token for Twitch API.')
     args = parser.parse_args()
-    if len(args.token) < 1:
-        print("Please specify a valid Token for the Twitch API.")
-        exit(1)
-        # Alternatively, if no token is provided, read one from .env File 
-    print("Hello Enabled {}".format(args.hello_msg))
+    token = args.token
 
-    bot = Bot(args.token, args.hello_msg)
+    load_dotenv()
+
+    if len(token) < 1:
+        print("Reading Access Token from .env file.")
+        token = os.getenv('ACCESS_TOKEN')
+
+    bot = Bot(token, args.hello_msg)
+    print("Hello Test-Message in all channels enabled: {}".format(args.hello_msg))
     print("Starting ChessterBot...")
-    bot.run()
+    try:
+        bot.run()
+    except AuthenticationError:
+        # This error handling doesnt work. Idk why, asyncio is weird.
+        print("Invalid or no Access Token provided. Use --token to provide the Access Token or set up an .env in the root directory containing the ACCESS_TOKEN field to provide a valid token.")
+        exit(1)
+
 # bot.run() is blocking and will stop execution of any below code here until stopped or closed.
