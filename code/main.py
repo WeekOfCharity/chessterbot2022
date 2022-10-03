@@ -325,4 +325,3 @@ if __name__ == '__main__':
         print("Invalid or no Access Token provided. Use --token to provide the Access Token or set up an .env in the root directory containing the ACCESS_TOKEN field to provide a valid token.")
         exit(1)
 
-# bot.run() is blocking and will stop execution of any below code here until stopped or closed.
