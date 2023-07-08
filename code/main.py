@@ -1,4 +1,7 @@
 # ChessterBot created by Bina and Marlin for the Week of Charity 2022
+# Updated for the Week of Charity 2023
+#
+# ChessterBot v.23.01
 
 from multiprocessing import AuthenticationError
 from dotenv import load_dotenv
@@ -27,18 +30,20 @@ CHANNEL_LIST = [
     'badingoregrill',
     'miragaia_anco',
     'Placedelynn',
-    'yambosoba',
-    'theescarboom',
-    'dosenpfirsiche',
-    'marlinwoc'
+    'shinjis_world'
 ]
+
 MSG_FREQ = 1800 # In Seconds
 
 # 1664103600 -> 25. September 2022 13:00:00 GMT+02:00 (Beginn der WoC2022)
 START_TIMESTAMP = datetime.fromtimestamp(1664103600)
 
+WOC_START_JUST_NOW_TEXT = "ZACK! Die Week of Charity hat gerade begonnen!"
+WOC_START_IN_FUTURE_TEXT = "ZACK! Die Week of Charity 2023 coming soon!"
+WOC_END_TEXT = "ZACK! Die Week of Charity ist vorbei! Bis zum nächsten Mal!"
+
 # Command texts
-HELP_TEXT = "ZACK! Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !uptime, !shop, !socials, !youtube, !twitter, !tiktok, !musik, !verlosung, !bidwar"
+HELP_TEXT = "ZACK! Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !uptime, !shop, !socials, !youtube, !twitter, !tiktok, !musik, !verlosung"
 WEBSITE_TEXT = "ZACK! Unsere Website: https://weekofcharity.de/"
 FAQ_TEXT = "ZACK! Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
 SCHEDULE_TEXT = "ZACK! Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams"
@@ -52,17 +57,6 @@ TWITTER_TEXT = "ZACK! Hier gibt es die neusten Tweets: https://twitter.com/WeekO
 TIKTOK_TEXT = "ZACK! Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity"
 MUSIK_TEXT = "ZACK! Die Musik für dieses Jahr wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/"
 VERLOSUNG_TEXT = "ZACK! Wie ihr an Verlosungen teilnehmen könnt, erfahrt ihr im FAQ auf unserer Website: https://weekofcharity.de/#faq"
-BIDWAR_TEXT = 'ZACK! Eugen färbt sich die Haare nach eurem Wunsch! Dies könnt ihr in Form von Donations beeinflussen. Die Optionen sind Hellblau/Rosa "Trans", Lila/Gelb "Nonbinary" oder Grün/Pink "Splatoon 2". Mehr Infos in unserem FAQ: https://weekofcharity.de/#faq'
-SCHACHSTREAM_TEXT = 'ZACK! Den Plan für den Schachstream findet ihr hier: https://twitter.com/wizomibaby/status/1575933168808386560?t=kEX6klwSywFFnRJnqGIrEw&s=19'
-
-VERLOSUNG_SVEN_TEXT = "Am Ende des Pen and Paper-Abenteuers am Mittwoch könnt ihr einen Key für Wonderdraft gewinnen! Mithilfe dieser Software könnt ihr atemberaubende Karten für eure fiktiven Welten oder auch einfach zum Spaß erstellen!"
-VERLOSUNG_EUGEN_TEXT = "Bei Eugen wird eure Switch bereichert! Gewinnen könnt ihr am Dienstag zwischen 04:00-07:00 Uhr Pokémon Schillernde Perle, am Donnerstag zwischen 05:00-08:00 Uhr Paper Mario: The Origami King und am Freitag zwischen 08:00-11:00 Uhr The Legend of Zelda: Skyward Sword HD!"
-VERLOSUNG_LISA_TEXT = "Am Ende des Glass Painting Streams könnt ihr das fertige Kunstwerk gewinnen! Ein Stück Week of Charity-Geschichte für euer Wohnzimmer!"
-VERLOSUNG_LUCA_TEXT = "Am Donnerstag zwischen 12-15 Uhr könnt ihr hier zwei Steam-Keys für Guts and Goals, den Mix aus Fußball und Beat-em-up, gewinnen! Diese Keys wurden uns extra vom Entwickler zur Verfügung gestellt und werden spontan verlost, also haltet die Ohren offen!"
-VERLOSUNG_CHRIS_TEXT = "Auf dem Glücksrad findet man neben einer Ansammlung großartiger Spiele, die von Chris gespielt werden, auch großartige Spiele, die verlost werden! Wenn das Rad darauf landet, wird sofort eine Verlosung abgehalten. Also spendet auf keinen Fall, sonst muss Chris immer wieder drehen!"
-VERLOSUNG_FELI_TEXT = "Falls ihr Freude am Kreativen habt, könnt ihr hier 3 Keys für Guts and Goals auf Steam gewinnen. Die Gewinner werden hier nicht per Zufall ermittelt, sondern über die besten Bauten des Minecraft Servers! Schaut für nähere Infos einfach auf dem Server WeekOfCharity.mine-hoster.net vorbei und schaltet ein, wenn Feli am Freitag die Projekte bewertet! Ihr müsst beim Stream nicht anwesend sein, um zu gewinnen."
-VERLOSUNG_NOAH_TEXT = "Der Schachstream ist immer voller Highlights, und diesmal gibt es sogar ein Neues obendrauf: Die ersten drei Personen, die Noah in den Zuschauerpartien Matt setzen können, erhalten ihre Wahl aus den Spielen Chess Ultra, UNDERTALE und Slay the Spire! Wer zuerst gewinnt, mahlt zuerst!"
-VERLOSUNG_FINALE_TEXT = "Wie ihr an der finalen Verlosung teilnehmt, ist noch geheim!"
 
 # Other texts
 HELLO_TEXT = "ZACK! Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
@@ -77,14 +71,14 @@ SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT, TWITT
 
 
 def woc_format_time(td):
-    if td.days == 0 and td.seconds == 0:
-        return "ZACK! Die Week of Charity hat gerade begonnen!"
+    if td.days == 0 and td.seconds < 10:
+        return WOC_START_JUST_NOW_TEXT
     
     if td.days < 0:
-        return "ZACK! Die Week of Charity liegt in der Zukunft!"
+        return WOC_START_IN_FUTURE_TEXT
 
     if td.days > 8:
-        return "ZACK! Die Week of Charity ist vorbei!"
+        return WOC_END_TEXT
 
     seconds = td.seconds % 60
     minutes = math.floor(td.seconds / 60) % 60
@@ -233,9 +227,9 @@ class Bot(commands.Bot):
     async def verlosung(self, ctx: commands.Context):
         await ctx.send(VERLOSUNG_TEXT)
     
-    @commands.command(aliases=["haare", "eugen", "eugenshaare"])
-    async def bidwar(self, ctx: commands.Context):
-        await ctx.send(BIDWAR_TEXT)
+    # @commands.command(aliases=["haare", "eugen", "eugenshaare"])
+    # async def bidwar(self, ctx: commands.Context):
+    #     await ctx.send(BIDWAR_TEXT)
 
     @commands.command()
     async def hallo(self, ctx: commands.Context):
@@ -257,37 +251,33 @@ class Bot(commands.Bot):
     async def grüezi(self, ctx: commands.Context):
         await ctx.send(SCHWEIZER_HELLO_TEXT)
 
-    @commands.command(aliases=["VerlosungSven", "verlosungSven"])
-    async def verlosungsven(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_SVEN_TEXT)
+    # @commands.command(aliases=["VerlosungSven", "verlosungSven"])
+    # async def verlosungsven(self, ctx: commands.Context):
+    #     await ctx.send(VERLOSUNG_SVEN_TEXT)
 
-    @commands.command(aliases=["VerlosungEugen", "verlosungEugen"])
-    async def verlosungeugen(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_EUGEN_TEXT)
+    # @commands.command(aliases=["VerlosungEugen", "verlosungEugen"])
+    # async def verlosungeugen(self, ctx: commands.Context):
+    #     await ctx.send(VERLOSUNG_EUGEN_TEXT)
 
-    @commands.command(aliases=["VerlosungLisa", "verlosungLisa"])
-    async def verlosunglisa(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_LISA_TEXT)
+    # @commands.command(aliases=["VerlosungLisa", "verlosungLisa"])
+    # async def verlosunglisa(self, ctx: commands.Context):
+    #     await ctx.send(VERLOSUNG_LISA_TEXT)
 
-    @commands.command(aliases=["VerlosungLuca", "verlosungLuca"])
-    async def verlosungluca(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_LUCA_TEXT)
+    # @commands.command(aliases=["VerlosungLuca", "verlosungLuca"])
+    # async def verlosungluca(self, ctx: commands.Context):
+    #     await ctx.send(VERLOSUNG_LUCA_TEXT)
 
-    @commands.command(aliases=["VerlosungChris", "verlosungChris"])
-    async def verlosungchris(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_CHRIS_TEXT)
+    # @commands.command(aliases=["VerlosungChris", "verlosungChris"])
+    # async def verlosungchris(self, ctx: commands.Context):
+    #     await ctx.send(VERLOSUNG_CHRIS_TEXT)
 
-    @commands.command(aliases=["VerlosungFeli", "verlosungFeli"])
-    async def verlosungfeli(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_FELI_TEXT)
+    # @commands.command(aliases=["VerlosungFeli", "verlosungFeli"])
+    # async def verlosungfeli(self, ctx: commands.Context):
+    #     await ctx.send(VERLOSUNG_FELI_TEXT)
 
-    @commands.command(aliases=["VerlosungNoah", "verlosungNoah"])
-    async def verlosungnoah(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_NOAH_TEXT)
-
-    @commands.command(aliases=["VerlosungFinale", "verlosungFinale"])
-    async def verlosungfinale(self, ctx: commands.Context):
-        await ctx.send(VERLOSUNG_FINALE_TEXT)
+    # @commands.command(aliases=["VerlosungFinale", "verlosungFinale"])
+    # async def verlosungfinale(self, ctx: commands.Context):
+    #     await ctx.send(VERLOSUNG_FINALE_TEXT)
 
     @commands.command()
     async def socials(self, ctx: commands.Context):
@@ -296,10 +286,6 @@ class Bot(commands.Bot):
     @commands.command(aliases=["schaltminute", "schaltminuten", "schaltsekunde"])
     async def schaltsekunden(self, ctx: commands.Context):
         await ctx.send(SCHALTSEKUNDEN_TEXT)
-    
-    @commands.command(aliases=["schach", "schachstreamplan", "schachstreamschedule"])
-    async def schachstream(self, ctx: commands.Context):
-        await ctx.send(SCHACHSTREAM_TEXT)
 
 if __name__ == '__main__':
     print("Initialize ChessterBot...")
@@ -324,4 +310,3 @@ if __name__ == '__main__':
         # This error handling doesnt work. Idk why, asyncio is weird.
         print("Invalid or no Access Token provided. Use --token to provide the Access Token or set up an .env in the root directory containing the ACCESS_TOKEN field to provide a valid token.")
         exit(1)
-
