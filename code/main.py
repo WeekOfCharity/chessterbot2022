@@ -30,7 +30,8 @@ CHANNEL_LIST = [
     'badingoregrill',
     'miragaia_anco',
     'Placedelynn',
-    'shinjis_world'
+    'shinjis_world',
+    'piatralisch'
 ]
 
 MSG_FREQ = 1800 # In Seconds
