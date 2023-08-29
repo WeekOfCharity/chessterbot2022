@@ -14,7 +14,7 @@ import argparse
 import random
 import os
 
-CHANNEL_LIST_ORIG = [
+CHANNEL_LIST = [
     'nislregen',
     'deraltan',
     'gumlong',
@@ -31,10 +31,6 @@ CHANNEL_LIST_ORIG = [
     'Placedelynn',
     'shinjis_world',
     'piatralisch'
-]
-
-CHANNEL_LIST = [
-    'MarlinWoC'
 ]
 
 YEAR = "2023"
@@ -213,7 +209,7 @@ class Bot(commands.Bot):
             for c in CHANNEL_LIST:
                 channel = self.get_channel(c)
                 await channel.send(GERMAN_HELLO_TEXT)
-                print("Sent hello message @ ({})".format(c))
+                print(f"Sent hello message @ ({c})")
 
         # Random scheduled messages
         while True:
