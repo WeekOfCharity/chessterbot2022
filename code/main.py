@@ -56,6 +56,7 @@ SCHEDULE_TEXT = "Hier findet ihr den Zeitplan des Events: https://weekofcharity.
 CHARITY_TEXT = "Hier findet ihr Informationen zur Charity: https://weekofcharity.de/projekte 🐱"
 DONATE_TEXT = "Hier könnt ihr donaten: https://www.betterplace.org/de/fundraising-events/45057-week-of-charity-2023 🐶"
 GOALS_TEXT = "Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden 🐝"
+BIDWAR_TEXT = "Entscheidet mit euren Spenden, über welches Tier Jesko ein Referat hält: https://weekofcharity.de/#bidwar 🦊"
 SHOP_TEXT = "Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/ 🦝"
 YOUTUBE_TEXT = "Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/@weekofcharity8094 🦔"
 TWITTER_TEXT = "Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity 🐦"
@@ -72,6 +73,7 @@ ENG_SCHEDULE_TEXT = "Here you can find the schedule for our event: https://weeko
 ENG_CHARITY_TEXT = "Here you can find information about the charity we support: https://weekofcharity.de/projekte 🐱"
 ENG_DONATE_TEXT = "Donate here: https://www.betterplace.org/de/fundraising-events/45057-week-of-charity-2023 🐶"
 ENG_GOALS_TEXT = "Here you can find our donation goals: https://weekofcharity.de/#spenden 🐝"
+ENG_BIDWAR_TEXT = "Decide with your donations which animal Jesko will give a presentation about: https://weekofcharity.de/#bidwar 🦊"
 ENG_SHOP_TEXT = "Want some merch? Check out our shop: https://www.shirtee.com/de/store/weekofcharity/ 🦝"
 ENG_YOUTUBE_TEXT = "Our YouTube channel for VODs: https://www.youtube.com/@weekofcharity8094 🦔"
 ENG_TWITTER_TEXT = "Here you can find our latest tweets: https://twitter.com/WeekOfCharity 🐦"
@@ -348,6 +350,14 @@ class Bot(commands.Bot):
             await ctx.send(GOALS_TEXT)
         elif language == "en":
             await ctx.send(ENG_GOALS_TEXT)
+
+    @commands.command(aliases=["abstimmung"])
+    async def bidwar(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(BIDWAR_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_BIDWAR_TEXT)
 
     @commands.command(aliases=["webseite", "seite", "site", "about", "info", "woc", "website_en", "info_en", "about_en", "site_en", "woc_en"])
     async def website(self, ctx: commands.Context):
