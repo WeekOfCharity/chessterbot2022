@@ -63,7 +63,7 @@ TWITTER_TEXT = "Hier gibt es die neusten Tweets: https://twitter.com/WeekOfChari
 TIKTOK_TEXT = "Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity 🐒"
 INSTAGRAM_TEXT = "Folgt uns auf Instagram: https://www.instagram.com/weekofcharity/ 🦚"
 MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofcharity 🐘"
-MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/ 🦜"
+MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack 🦜"
 
 # Command texts [ENG]
 ENG_HELP_TEXT = "The following commands are available: !website_en, !faq_en, !programm_en, !charity_en, !donate_en, !goals_en, !bidwar_en, !uptime_en, !shop_en, !youtube_en, !twitter_en, !tiktok_en, !instagram_en, !mastodon_en, !musik_en"
@@ -80,7 +80,7 @@ ENG_TWITTER_TEXT = "Here you can find our latest tweets: https://twitter.com/Wee
 ENG_TIKTOK_TEXT = "Follow us on TikTok for funny clips: https://www.tiktok.com/@weekofcharity 🐒"
 ENG_INSTAGRAM_TEXT = "Follow us on Instagram: https://www.instagram.com/weekofcharity/ 🦚"
 ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@weekofcharity 🐘"
-ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.com/album/week-of-charity-2022-soundtrack/ 🦜"
+ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack 🦜"
 
 # Other texts
 GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen. 🐾"
