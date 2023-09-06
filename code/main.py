@@ -351,7 +351,7 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_GOALS_TEXT)
 
-    @commands.command(aliases=["abstimmung"])
+    @commands.command(aliases=["abstimmung", "bidwar_en"])
     async def bidwar(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
