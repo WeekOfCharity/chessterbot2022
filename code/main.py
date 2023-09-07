@@ -14,7 +14,7 @@ import argparse
 import random
 import os
 
-CHANNEL_LIST = [
+CHANNEL_LIST2 = [
     'nislregen',
     'deraltan',
     'gumlong',
@@ -31,6 +31,10 @@ CHANNEL_LIST = [
     'Placedelynn',
     'shinjis_world',
     'piatralisch'
+]
+
+CHANNEL_LIST = [
+    'BinaKleinerAls3'
 ]
 
 YEAR = "2023"
@@ -197,7 +201,7 @@ class Bot(commands.Bot):
         # initial_channels can also be a callable which returns a list of strings...
         self.api_token = api_token
         self.hello_msg = hello_msg
-        super().__init__(token=api_token, prefix='!', initial_channels=CHANNEL_LIST)
+        super().__init__(token=api_token, prefix='!', initial_channels=CHANNEL_LIST, case_insensitive=True)
 
     async def event_ready(self):
         # Notify us when everything is ready!
