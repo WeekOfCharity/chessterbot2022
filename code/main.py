@@ -271,7 +271,7 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_FAQ_TEXT)
 
-    @commands.command(aliases=["merch", "shop_en"])
+    @commands.command(aliases=["merch", "shop_en", "merch_en"])
     async def shop(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
@@ -303,7 +303,7 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_TWITTER_TEXT)
 
-    @commands.command(aliases=["donations", "donation", "spenden", "spende", "donate_en"])
+    @commands.command(aliases=["donations", "donation", "spenden", "spende", "donate_en", "donations_en", "donation_en"])
     async def donate(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
@@ -311,7 +311,7 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_DONATE_TEXT)
 
-    @commands.command(aliases=["yt", "youtube_en"])
+    @commands.command(aliases=["yt", "youtube_en", "yt_en"])
     async def youtube(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
@@ -343,7 +343,7 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_MASTODON_TEXT)
 
-    @commands.command(aliases=["donationgoals", "goal", "spendenziele", "spendenziel", "ziele", "goals_en", "donationgoals_en"])
+    @commands.command(aliases=["donationgoals", "goal", "spendenziele", "spendenziel", "ziele", "goals_en", "donationgoals_en", "goal_en"])
     async def goals(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
@@ -351,7 +351,7 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_GOALS_TEXT)
 
-    @commands.command(aliases=["abstimmung", "bidwar_en"])
+    @commands.command(aliases=["abstimmung", "bidwar_en", "abstimmung_en"])
     async def bidwar(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
