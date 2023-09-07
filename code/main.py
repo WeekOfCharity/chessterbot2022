@@ -14,7 +14,7 @@ import argparse
 import random
 import os
 
-CHANNEL_LIST2 = [
+CHANNEL_LIST = [
     'nislregen',
     'deraltan',
     'gumlong',
@@ -31,10 +31,6 @@ CHANNEL_LIST2 = [
     'Placedelynn',
     'shinjis_world',
     'piatralisch'
-]
-
-CHANNEL_LIST = [
-    'BinaKleinerAls3'
 ]
 
 YEAR = "2023"
