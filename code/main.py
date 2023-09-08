@@ -64,6 +64,7 @@ TIKTOK_TEXT = "Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@
 INSTAGRAM_TEXT = "Folgt uns auf Instagram: https://www.instagram.com/weekofcharity/ 🦚"
 MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofcharity 🐘"
 MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack 🦜"
+SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle 🦐"
 
 # Command texts [ENG]
 ENG_HELP_TEXT = "The following commands are available: !website_en, !faq_en, !programm_en, !charity_en, !donate_en, !goals_en, !bidwar_en, !uptime_en, !shop_en, !youtube_en, !twitter_en, !tiktok_en, !instagram_en, !mastodon_en, !musik_en"
@@ -81,6 +82,7 @@ ENG_TIKTOK_TEXT = "Follow us on TikTok for funny clips: https://www.tiktok.com/@
 ENG_INSTAGRAM_TEXT = "Follow us on Instagram: https://www.instagram.com/weekofcharity/ 🦚"
 ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@weekofcharity 🐘"
 ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack 🦜"
+ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle 🦐"
 
 # Other texts
 GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen. 🐾"
@@ -374,6 +376,14 @@ class Bot(commands.Bot):
             await ctx.send(MUSIK_TEXT)
         elif language == "en":
             await ctx.send(ENG_MUSIK_TEXT)
+    
+    @commands.command(aliases=["spieleshuffle_en", "shuffle", "shuffle_en"])
+    async def spieleshuffle(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(SPIELESHUFFLE_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_SPIELESHUFFLE_TEXT)
 
     @commands.command()
     async def hallo(self, ctx: commands.Context):
