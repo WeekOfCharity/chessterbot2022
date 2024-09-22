@@ -1,7 +1,8 @@
 # ChessterBot created by Bina and Marlin for the Week of Charity 2022
 # Updated for the Week of Charity 2023
+# Updated for the Week of Charity 2024
 #
-# ChessterBot v.23.1.0
+# ChessterBot v.24.0.0
 
 from multiprocessing import AuthenticationError
 from dotenv import load_dotenv
@@ -21,24 +22,24 @@ CHANNEL_LIST = [
     'grandtriskel',
     'EpicEugen1',
     'ennieways',
-    'sir_nightmare94',
+    'svenandpaper',
     'BinaKleinerAls3',
     'lisanougat',
     'KurisuVanEdge',
     'emtes',
     'badingoregrill',
     'miragaia_anco',
-    'Placedelynn',
     'shinjis_world',
-    'piatralisch'
+    'piatralisch',
+    'natakazie'
 ]
 
-YEAR = "2023"
+YEAR = "2024"
 
 MSG_FREQ = 1800 # In Seconds
 
-# https://www.epochconverter.com/ -- Saturday, September 9, 2023 3:00:00 PM GMT+02:00
-START_TIMESTAMP = datetime.fromtimestamp(1694264400)
+# https://www.epochconverter.com/ -- Sonntag, 6. Oktober 2024 18:00:00 GMT+02:00
+START_TIMESTAMP = datetime.fromtimestamp(1728230400)
 
 WOC_START_JUST_NOW_TEXT = "Die Week of Charity hat gerade begonnen!"
 WOC_START_IN_FUTURE_TEXT = f"Die Week of Charity {YEAR} started bald!"
@@ -50,50 +51,50 @@ ENG_WOC_END_TEXT = "The Week of Charity is over! See you next time!"
 
 # Command texts
 HELP_TEXT = "Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !bidwar, !uptime, !shop, !youtube, !twitter, !tiktok, !instagram, !mastodon, !musik --- Add '_en' for english commands."
-WEBSITE_TEXT = "Unsere Website: https://weekofcharity.de/ 🐄"
-FAQ_TEXT = "Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq 🦉"
-SCHEDULE_TEXT = "Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams 🐓"
-CHARITY_TEXT = "Hier findet ihr Informationen zur Charity: https://weekofcharity.de/projekte 🐱"
-DONATE_TEXT = "Hier könnt ihr donaten: https://www.betterplace.org/de/fundraising-events/45057-week-of-charity-2023 🐶"
-GOALS_TEXT = "Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden 🐝"
-BIDWAR_TEXT = "Entscheidet mit euren Spenden, über welches Tier Jesko ein Referat hält: https://weekofcharity.de/#bidwar 🐰"
-SHOP_TEXT = "Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/ 🦝"
-YOUTUBE_TEXT = "Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/@weekofcharity8094 🦔"
-TWITTER_TEXT = "Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity 🐦"
-TIKTOK_TEXT = "Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity 🐒"
-INSTAGRAM_TEXT = "Folgt uns auf Instagram: https://www.instagram.com/weekofcharity/ 🦚"
-MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofcharity 🐘"
-MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack 🦜"
-SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle 🦐"
+WEBSITE_TEXT = "Unsere Website: https://weekofcharity.de/"
+FAQ_TEXT = "Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
+SCHEDULE_TEXT = "Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams"
+CHARITY_TEXT = "Hier findet ihr Informationen zur Charity: https://weekofcharity.de/projekte"
+DONATE_TEXT = "Hier könnt ihr donaten: https://betterplace.org/spenden/woc2024"
+GOALS_TEXT = "Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden"
+BIDWAR_TEXT = "Entscheidet mit euren Spenden, über welches Tier Jesko ein Referat hält: https://weekofcharity.de/#bidwar"
+SHOP_TEXT = "Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
+YOUTUBE_TEXT = "Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/@weekofcharity8094"
+TWITTER_TEXT = "Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity"
+TIKTOK_TEXT = "Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity"
+INSTAGRAM_TEXT = "Folgt uns auf Instagram: https://www.instagram.com/weekofcharity/"
+MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofcharity"
+MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack"
+SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle"
 
 # Command texts [ENG]
 ENG_HELP_TEXT = "The following commands are available: !website_en, !faq_en, !programm_en, !charity_en, !donate_en, !goals_en, !bidwar_en, !uptime_en, !shop_en, !youtube_en, !twitter_en, !tiktok_en, !instagram_en, !mastodon_en, !musik_en"
-ENG_WEBSITE_TEXT = "Our website: https://weekofcharity.de/ 🐄"
-ENG_FAQ_TEXT = "Frequently asked questions: https://weekofcharity.de/#faq 🦉"
-ENG_SCHEDULE_TEXT = "Here you can find the schedule for our event: https://weekofcharity.de/streams 🐓"
-ENG_CHARITY_TEXT = "Here you can find information about the charity we support: https://weekofcharity.de/projekte 🐱"
-ENG_DONATE_TEXT = "Donate here: https://www.betterplace.org/de/fundraising-events/45057-week-of-charity-2023 🐶"
-ENG_GOALS_TEXT = "Here you can find our donation goals: https://weekofcharity.de/#spenden 🐝"
-ENG_BIDWAR_TEXT = "Decide with your donations which animal Jesko will give a presentation about: https://weekofcharity.de/#bidwar 🐰"
-ENG_SHOP_TEXT = "Want some merch? Check out our shop: https://www.shirtee.com/de/store/weekofcharity/ 🦝"
-ENG_YOUTUBE_TEXT = "Our YouTube channel for VODs: https://www.youtube.com/@weekofcharity8094 🦔"
-ENG_TWITTER_TEXT = "Here you can find our latest tweets: https://twitter.com/WeekOfCharity 🐦"
-ENG_TIKTOK_TEXT = "Follow us on TikTok for funny clips: https://www.tiktok.com/@weekofcharity 🐒"
-ENG_INSTAGRAM_TEXT = "Follow us on Instagram: https://www.instagram.com/weekofcharity/ 🦚"
-ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@weekofcharity 🐘"
-ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack 🦜"
-ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle 🦐"
+ENG_WEBSITE_TEXT = "Our website: https://weekofcharity.de/"
+ENG_FAQ_TEXT = "Frequently asked questions: https://weekofcharity.de/#faq"
+ENG_SCHEDULE_TEXT = "Here you can find the schedule for our event: https://weekofcharity.de/streams"
+ENG_CHARITY_TEXT = "Here you can find information about the charity we support: https://weekofcharity.de/projekte"
+ENG_DONATE_TEXT = "Donate here: https://betterplace.org/spenden/woc2024"
+ENG_GOALS_TEXT = "Here you can find our donation goals: https://weekofcharity.de/#spenden"
+ENG_BIDWAR_TEXT = "Decide with your donations which animal Jesko will give a presentation about: https://weekofcharity.de/#bidwar"
+ENG_SHOP_TEXT = "Want some merch? Check out our shop: https://www.shirtee.com/de/store/weekofcharity/"
+ENG_YOUTUBE_TEXT = "Our YouTube channel for VODs: https://www.youtube.com/@weekofcharity8094"
+ENG_TWITTER_TEXT = "Here you can find our latest tweets: https://twitter.com/WeekOfCharity"
+ENG_TIKTOK_TEXT = "Follow us on TikTok for funny clips: https://www.tiktok.com/@weekofcharity"
+ENG_INSTAGRAM_TEXT = "Follow us on Instagram: https://www.instagram.com/weekofcharity/"
+ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@weekofcharity"
+ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack"
+ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle"
 
 # Other texts
-GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen. 🐾"
-AUSTRIA_HELLO_TEXT = "Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen. 🐾"
-BAYRISCH_HELLO_TEXT = "Servus, i bin ChessterBot! Mit '!help' konnst du dir alle verfügbaren Commands ozoagn lassn. 🐾"
-SCHWEIZER_HELLO_TEXT = "Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh. 🐾"
-LUXEMBURGISCH_HELLO_TEXT = "Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen. 🐾"
-ENGLISH_HELLO_TEXT = "Hello, I'm ChessterBot! With '!help_en' you can check out all available commands. 🐾"
+GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
+AUSTRIA_HELLO_TEXT = "Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen."
+BAYRISCH_HELLO_TEXT = "Servus, i bin ChessterBot! Mit '!help' konnst du dir alle verfügbaren Commands ozoagn lassn."
+SCHWEIZER_HELLO_TEXT = "Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh."
+LUXEMBURGISCH_HELLO_TEXT = "Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen."
+ENGLISH_HELLO_TEXT = "Hello, I'm ChessterBot! With '!help_en' you can check out all available commands."
 
-SCHALTSEKUNDEN_TEXT = "Wenn ihr Interesse an Schaltsekunden habt, schaut hier rein: https://de.wikipedia.org/wiki/Schaltsekunde 🐾"
-ENG_SCHALTSEKUNDEN_TEXT = "Interested in Schaltsekunden? Check this out: https://de.wikipedia.org/wiki/Schaltsekunde 🐾"
+SCHALTSEKUNDEN_TEXT = "Wenn ihr Interesse an Schaltsekunden habt, schaut hier rein: https://de.wikipedia.org/wiki/Schaltsekunde"
+ENG_SCHALTSEKUNDEN_TEXT = "Interested in Schaltsekunden? Check this out: https://de.wikipedia.org/wiki/Schaltsekunde"
 
 SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT]
 
