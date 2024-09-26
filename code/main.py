@@ -36,7 +36,7 @@ CHANNEL_LIST = [
 
 YEAR = "2024"
 
-MSG_FREQ = 1800 # In Seconds
+MSG_FREQ = 1200 # In Seconds
 
 # https://www.epochconverter.com/ -- Sonntag, 6. Oktober 2024 18:00:00 GMT+02:00
 START_TIMESTAMP = datetime.fromtimestamp(1728230400)
@@ -50,53 +50,59 @@ ENG_WOC_START_IN_FUTURE_TEXT = f"The Week of Charity {YEAR} starts soon!"
 ENG_WOC_END_TEXT = "The Week of Charity is over! See you next time!"
 
 # Command texts
-HELP_TEXT = "Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !bidwar, !uptime, !shop, !youtube, !twitter, !tiktok, !instagram, !mastodon, !musik --- Add '_en' for english commands."
-WEBSITE_TEXT = "Unsere Website: https://weekofcharity.de/"
-FAQ_TEXT = "Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq"
-SCHEDULE_TEXT = "Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams"
-CHARITY_TEXT = "Hier findet ihr Informationen zur Charity: https://weekofcharity.de/projekte"
-DONATE_TEXT = "Hier könnt ihr donaten: https://betterplace.org/spenden/woc2024"
-GOALS_TEXT = "Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden"
-BIDWAR_TEXT = "Entscheidet mit euren Spenden, über welches Tier Jesko ein Referat hält: https://weekofcharity.de/#bidwar"
-SHOP_TEXT = "Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity/"
-YOUTUBE_TEXT = "Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/@weekofcharity8094"
-TWITTER_TEXT = "Hier gibt es die neusten Tweets: https://twitter.com/WeekOfCharity"
-TIKTOK_TEXT = "Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity"
-INSTAGRAM_TEXT = "Folgt uns auf Instagram: https://www.instagram.com/weekofcharity/"
-MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofcharity"
-MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack"
-SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle"
+HELP_TEXT = "Folgende commands sind verfügbar: !website, !faq, !programm, !charity, !donate, !goals, !bidwar, !uptime, !shop, !sponsor, !youtube, !twitter, !tiktok, !instagram, !mastodon, !bluesky, !musik --- Add '_en' for english commands. 📣"
+WEBSITE_TEXT = "Unsere Website: https://weekofcharity.de 📣"
+FAQ_TEXT = "Wichtige Fragen und Antworten in unserem FAQ: https://weekofcharity.de/#faq 📣"
+SCHEDULE_TEXT = "Hier findet ihr den Zeitplan des Events: https://weekofcharity.de/streams 📣"
+CHARITY_TEXT = "Hier findet ihr Informationen zur Charity: https://weekofcharity.de/projekte 📣"
+DONATE_TEXT = "Hier könnt ihr donaten: https://betterplace.org/spenden/woc2024 📣"
+GOALS_TEXT = "Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden 📣"
+BIDWAR_TEXT = "Entscheidet mit euren Spenden: https://weekofcharity.de/#bidwar 📣"
+SHOP_TEXT = "Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity 📣"
+YOUTUBE_TEXT = "Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/@weekofcharity 📣"
+TWITTER_TEXT = "Hier gibt es die neusten Tweets: https://x.com/WeekOfCharity 📣"
+TIKTOK_TEXT = "Folgt uns auf TikTok für lustige Clips: https://www.tiktok.com/@weekofcharity 📣"
+INSTAGRAM_TEXT = "Folgt uns auf Instagram: https://www.instagram.com/weekofcharity 📣"
+MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofcharity 📣"
+BLUESKY_TEXT = "Folgt uns auf Bluesky: https://bsky.app/profile/chesster.weekofcharity.de 📣"
+MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp.com/album/week-of-charity-2024-soundtrack 📣"
+SPONSOR_TEXT = "Die Week of Charity wird unterstützt von Cardgourmet! Schaut hier vorbei: https://cardgourmet.com 📣"
+SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle 📣"
+WOCWM_TEXT = "Alle Infos zur WoC-WM findet ihr hier: https://weekofcharity.de/aktivitaeten?id=74 📣"
 
 # Command texts [ENG]
-ENG_HELP_TEXT = "The following commands are available: !website_en, !faq_en, !programm_en, !charity_en, !donate_en, !goals_en, !bidwar_en, !uptime_en, !shop_en, !youtube_en, !twitter_en, !tiktok_en, !instagram_en, !mastodon_en, !musik_en"
-ENG_WEBSITE_TEXT = "Our website: https://weekofcharity.de/"
-ENG_FAQ_TEXT = "Frequently asked questions: https://weekofcharity.de/#faq"
-ENG_SCHEDULE_TEXT = "Here you can find the schedule for our event: https://weekofcharity.de/streams"
-ENG_CHARITY_TEXT = "Here you can find information about the charity we support: https://weekofcharity.de/projekte"
-ENG_DONATE_TEXT = "Donate here: https://betterplace.org/spenden/woc2024"
-ENG_GOALS_TEXT = "Here you can find our donation goals: https://weekofcharity.de/#spenden"
-ENG_BIDWAR_TEXT = "Decide with your donations which animal Jesko will give a presentation about: https://weekofcharity.de/#bidwar"
-ENG_SHOP_TEXT = "Want some merch? Check out our shop: https://www.shirtee.com/de/store/weekofcharity/"
-ENG_YOUTUBE_TEXT = "Our YouTube channel for VODs: https://www.youtube.com/@weekofcharity8094"
-ENG_TWITTER_TEXT = "Here you can find our latest tweets: https://twitter.com/WeekOfCharity"
-ENG_TIKTOK_TEXT = "Follow us on TikTok for funny clips: https://www.tiktok.com/@weekofcharity"
-ENG_INSTAGRAM_TEXT = "Follow us on Instagram: https://www.instagram.com/weekofcharity/"
-ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@weekofcharity"
-ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.com/album/week-of-charity-2023-soundtrack"
-ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle"
+ENG_HELP_TEXT = "The following commands are available: !website_en, !faq_en, !programm_en, !charity_en, !donate_en, !goals_en, !bidwar_en, !uptime_en, !sponsor_en, !shop_en, !youtube_en, !twitter_en, !tiktok_en, !instagram_en, !mastodon_en, !bluesky_en, !musik_en 📣"
+ENG_WEBSITE_TEXT = "Our website: https://weekofcharity.de 📣"
+ENG_FAQ_TEXT = "Frequently asked questions: https://weekofcharity.de/#faq 📣"
+ENG_SCHEDULE_TEXT = "Here you can find the schedule for our event: https://weekofcharity.de/streams 📣"
+ENG_CHARITY_TEXT = "Here you can find information about the charity we support: https://weekofcharity.de/projekte 📣"
+ENG_DONATE_TEXT = "Donate here: https://betterplace.org/spenden/woc2024 📣"
+ENG_GOALS_TEXT = "Here you can find our donation goals: https://weekofcharity.de/#spenden 📣"
+ENG_BIDWAR_TEXT = "Decide with your donations: https://weekofcharity.de/#bidwar 📣"
+ENG_SHOP_TEXT = "Want some merch? Check out our shop: https://www.shirtee.com/de/store/weekofcharity 📣"
+ENG_YOUTUBE_TEXT = "Our YouTube channel for VODs: https://www.youtube.com/@weekofcharity 📣"
+ENG_TWITTER_TEXT = "Here you can find our latest tweets: https://x.com/WeekOfCharity 📣"
+ENG_TIKTOK_TEXT = "Follow us on TikTok for funny clips: https://www.tiktok.com/@weekofcharity 📣"
+ENG_INSTAGRAM_TEXT = "Follow us on Instagram: https://www.instagram.com/weekofcharity 📣"
+ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@weekofcharity 📣"
+ENG_BLUESKY_TEXT = "Follow us on Bluesky: https://bsky.app/profile/chesster.weekofcharity.de 📣"
+ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.com/album/week-of-charity-2024-soundtrack 📣"
+ENG_SPONSOR_TEXT = "The Week of Charity is sponsored by Cardgourmet! Check them out here: https://cardgourmet.com 📣"
+ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle 📣"
+ENG_WOCWM_TEXT = "All info surrounding the WoC-WM can be found here: https://weekofcharity.de/aktivitaeten?id=74 📣"
 
 # Other texts
-GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
-AUSTRIA_HELLO_TEXT = "Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen."
-BAYRISCH_HELLO_TEXT = "Servus, i bin ChessterBot! Mit '!help' konnst du dir alle verfügbaren Commands ozoagn lassn."
-SCHWEIZER_HELLO_TEXT = "Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh."
-LUXEMBURGISCH_HELLO_TEXT = "Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen."
-ENGLISH_HELLO_TEXT = "Hello, I'm ChessterBot! With '!help_en' you can check out all available commands."
+GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen. 📣"
+AUSTRIA_HELLO_TEXT = "Griaß di, i bin der ChessterBot! Mit '!help' konnst du dir olle verfügboren Commands anzeigen lossen. 📣"
+BAYRISCH_HELLO_TEXT = "Servus, i bin ChessterBot! Mit '!help' konnst du dir alle verfügbaren Commands ozoagn lassn. 📣"
+SCHWEIZER_HELLO_TEXT = "Grüezi, ig heisse ChessterBot! Mit '!help' chasch dir alli verfüegbare Commands azeige loh. 📣"
+LUXEMBURGISCH_HELLO_TEXT = "Moien, ech sinn den ChessterBot! Mat '!help' kanns du dir all disponible Commands weisen loossen. 📣"
+ENGLISH_HELLO_TEXT = "Hello, I'm ChessterBot! With '!help_en' you can check out all available commands. 📣"
 
-SCHALTSEKUNDEN_TEXT = "Wenn ihr Interesse an Schaltsekunden habt, schaut hier rein: https://de.wikipedia.org/wiki/Schaltsekunde"
-ENG_SCHALTSEKUNDEN_TEXT = "Interested in Schaltsekunden? Check this out: https://de.wikipedia.org/wiki/Schaltsekunde"
+SCHALTSEKUNDEN_TEXT = "Wenn ihr Interesse an Schaltsekunden habt, schaut hier rein: https://de.wikipedia.org/wiki/Schaltsekunde 📣"
+ENG_SCHALTSEKUNDEN_TEXT = "Interested in Schaltsekunden? Check this out: https://de.wikipedia.org/wiki/Schaltsekunde 📣"
 
-SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT]
+SCHEDULED_MESSAGES = [WEBSITE_TEXT, SCHEDULE_TEXT, DONATE_TEXT, SHOP_TEXT, GOALS_TEXT]
 
 
 def woc_format_time(td):
@@ -250,9 +256,9 @@ class Bot(commands.Bot):
     async def uptime(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
-            await ctx.send(f"{woc_format_time(datetime.now() - START_TIMESTAMP)} 🦊")
+            await ctx.send(f"{woc_format_time(datetime.now() - START_TIMESTAMP)} 📣")
         elif language == "en":
-            await ctx.send(f"{woc_format_time_en(datetime.now() - START_TIMESTAMP)} 🦊")
+            await ctx.send(f"{woc_format_time_en(datetime.now() - START_TIMESTAMP)} 📣")
 
     @commands.command(aliases=["commands", "help_en"])
     async def help(self, ctx: commands.Context):
@@ -346,6 +352,14 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_MASTODON_TEXT)
 
+    @commands.command(aliases=["bluesky_en"])
+    async def bluesky(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(BLUESKY_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_BLUESKY_TEXT)
+
     @commands.command(aliases=["donationgoals", "goal", "spendenziele", "spendenziel", "ziele", "goals_en", "donationgoals_en", "goal_en"])
     async def goals(self, ctx: commands.Context):
         language = command_language(ctx)
@@ -354,13 +368,13 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_GOALS_TEXT)
 
-    @commands.command(aliases=["abstimmung", "bidwar_en", "abstimmung_en"])
-    async def bidwar(self, ctx: commands.Context):
-        language = command_language(ctx)
-        if language == "de":
-            await ctx.send(BIDWAR_TEXT)
-        elif language == "en":
-            await ctx.send(ENG_BIDWAR_TEXT)
+    # @commands.command(aliases=["abstimmung", "bidwar_en", "abstimmung_en"])
+    # async def bidwar(self, ctx: commands.Context):
+    #     language = command_language(ctx)
+    #     if language == "de":
+    #         await ctx.send(BIDWAR_TEXT)
+    #     elif language == "en":
+    #         await ctx.send(ENG_BIDWAR_TEXT)
 
     @commands.command(aliases=["webseite", "seite", "site", "about", "info", "woc", "website_en", "info_en", "about_en", "site_en", "woc_en"])
     async def website(self, ctx: commands.Context):
@@ -377,14 +391,30 @@ class Bot(commands.Bot):
             await ctx.send(MUSIK_TEXT)
         elif language == "en":
             await ctx.send(ENG_MUSIK_TEXT)
-    
-    @commands.command(aliases=["spieleshuffle_en", "shuffle", "shuffle_en"])
-    async def spieleshuffle(self, ctx: commands.Context):
+
+    @commands.command(aliases=["sponsor_en", "sponsoren", "sponsoren_en", "sponsors", "sponsors_en", "cardgourmet", "cardgourmet_en"])
+    async def sponsor(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
-            await ctx.send(SPIELESHUFFLE_TEXT)
+            await ctx.send(SPONSOR_TEXT)
         elif language == "en":
-            await ctx.send(ENG_SPIELESHUFFLE_TEXT)
+            await ctx.send(ENG_SPONSOR_TEXT)
+    
+    # @commands.command(aliases=["spieleshuffle_en", "shuffle", "shuffle_en"])
+    # async def spieleshuffle(self, ctx: commands.Context):
+    #     language = command_language(ctx)
+    #     if language == "de":
+    #         await ctx.send(SPIELESHUFFLE_TEXT)
+    #     elif language == "en":
+    #         await ctx.send(ENG_SPIELESHUFFLE_TEXT)
+
+    @commands.command(aliases=["wocwm_en", "wm", "wm_em"])
+    async def wocwm(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(WOCWM_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_WOCWM_TEXT)
 
     @commands.command()
     async def hallo(self, ctx: commands.Context):
