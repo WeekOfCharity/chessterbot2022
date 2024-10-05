@@ -57,7 +57,7 @@ SCHEDULE_TEXT = "Hier findet ihr den Zeitplan des Events: https://weekofcharity.
 CHARITY_TEXT = "Hier findet ihr Informationen zur Charity: https://weekofcharity.de/projekte 📣"
 DONATE_TEXT = "Hier könnt ihr donaten: https://betterplace.org/spenden/woc2024 📣"
 GOALS_TEXT = "Hier findet ihr alle Spendenziele: https://weekofcharity.de/#spenden 📣"
-BIDWAR_TEXT = "Entscheidet mit euren Spenden: https://weekofcharity.de/#bidwar 📣"
+BIDWAR_TEXT = "Mit einem # im Spendenkommentar könnt ihr an Bidwars teilnehmen! Mehr Infos hier: https://weekofcharity.de/#bidwar 📣"
 SHOP_TEXT = "Wenn ihr Interesse an Merch habt, schaut hier rein: https://www.shirtee.com/de/store/weekofcharity 📣"
 YOUTUBE_TEXT = "Unser YouTube-Kanal für die Aufzeichnungen: https://www.youtube.com/@weekofcharity 📣"
 TWITTER_TEXT = "Hier gibt es die neusten Tweets: https://x.com/WeekOfCharity 📣"
@@ -69,6 +69,7 @@ MUSIK_TEXT = "Die Musik wurde von amy und mioh gemacht: https://kleeder.bandcamp
 SPONSOR_TEXT = "Die Week of Charity wird unterstützt von Cardgourmet! Schaut hier vorbei: https://cardgourmet.com 📣"
 SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle 📣"
 WOCWM_TEXT = "Alle Infos zur WoC-WM findet ihr hier: https://weekofcharity.de/aktivitaeten?id=74 📣"
+ARTIST_TEXT = "Schaut bei unserem Guest Artist @JacqJohnsonArt vorbei: https://linktr.ee/jacquelynjohnson 📣"
 
 # Command texts [ENG]
 ENG_HELP_TEXT = "The following commands are available: !website_en, !faq_en, !programm_en, !charity_en, !donate_en, !goals_en, !bidwar_en, !uptime_en, !sponsor_en, !shop_en, !youtube_en, !twitter_en, !tiktok_en, !instagram_en, !mastodon_en, !bluesky_en, !musik_en 📣"
@@ -78,7 +79,7 @@ ENG_SCHEDULE_TEXT = "Here you can find the schedule for our event: https://weeko
 ENG_CHARITY_TEXT = "Here you can find information about the charity we support: https://weekofcharity.de/projekte 📣"
 ENG_DONATE_TEXT = "Donate here: https://betterplace.org/spenden/woc2024 📣"
 ENG_GOALS_TEXT = "Here you can find our donation goals: https://weekofcharity.de/#spenden 📣"
-ENG_BIDWAR_TEXT = "Decide with your donations: https://weekofcharity.de/#bidwar 📣"
+ENG_BIDWAR_TEXT = "With a # in the donation comment you can participate in bidwars! More info here: https://weekofcharity.de/#bidwar 📣"
 ENG_SHOP_TEXT = "Want some merch? Check out our shop: https://www.shirtee.com/de/store/weekofcharity 📣"
 ENG_YOUTUBE_TEXT = "Our YouTube channel for VODs: https://www.youtube.com/@weekofcharity 📣"
 ENG_TWITTER_TEXT = "Here you can find our latest tweets: https://x.com/WeekOfCharity 📣"
@@ -90,6 +91,7 @@ ENG_MUSIK_TEXT = "The music was made by amy and mioh: https://kleeder.bandcamp.c
 ENG_SPONSOR_TEXT = "The Week of Charity is sponsored by Cardgourmet! Check them out here: https://cardgourmet.com 📣"
 ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle 📣"
 ENG_WOCWM_TEXT = "All info surrounding the WoC-WM can be found here: https://weekofcharity.de/aktivitaeten?id=74 📣"
+ENG_ARTIST_TEXT = "Check out our guest artist @JacqJohnsonArt: https://linktr.ee/jacquelynjohnson 📣"
 
 # Other texts
 GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen. 📣"
@@ -368,13 +370,13 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_GOALS_TEXT)
 
-    # @commands.command(aliases=["abstimmung", "bidwar_en", "abstimmung_en"])
-    # async def bidwar(self, ctx: commands.Context):
-    #     language = command_language(ctx)
-    #     if language == "de":
-    #         await ctx.send(BIDWAR_TEXT)
-    #     elif language == "en":
-    #         await ctx.send(ENG_BIDWAR_TEXT)
+    @commands.command(aliases=["abstimmung", "bidwar_en", "abstimmung_en", "bidwars", "bidwars_en"])
+    async def bidwar(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(BIDWAR_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_BIDWAR_TEXT)
 
     @commands.command(aliases=["webseite", "seite", "site", "about", "info", "woc", "website_en", "info_en", "about_en", "site_en", "woc_en"])
     async def website(self, ctx: commands.Context):
@@ -399,14 +401,6 @@ class Bot(commands.Bot):
             await ctx.send(SPONSOR_TEXT)
         elif language == "en":
             await ctx.send(ENG_SPONSOR_TEXT)
-    
-    # @commands.command(aliases=["spieleshuffle_en", "shuffle", "shuffle_en"])
-    # async def spieleshuffle(self, ctx: commands.Context):
-    #     language = command_language(ctx)
-    #     if language == "de":
-    #         await ctx.send(SPIELESHUFFLE_TEXT)
-    #     elif language == "en":
-    #         await ctx.send(ENG_SPIELESHUFFLE_TEXT)
 
     @commands.command(aliases=["wocwm_en", "wm", "wm_em"])
     async def wocwm(self, ctx: commands.Context):
@@ -415,6 +409,15 @@ class Bot(commands.Bot):
             await ctx.send(WOCWM_TEXT)
         elif language == "en":
             await ctx.send(ENG_WOCWM_TEXT)
+
+    @commands.command(aliases=["guestartist_en", "guestart", "guestart _em", "jacq", "jacq_en"])
+    async def guestartist(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(ARTIST_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_ARTIST_TEXT)
+            
 
     @commands.command()
     async def hallo(self, ctx: commands.Context):
