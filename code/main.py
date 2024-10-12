@@ -70,6 +70,7 @@ SPONSOR_TEXT = "Die Week of Charity wird unterstützt von Cardgourmet! Schaut hi
 SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle 📣"
 WOCWM_TEXT = "Alle Infos zur WoC-WM findet ihr hier: https://weekofcharity.de/aktivitaeten?id=74 📣"
 ARTIST_TEXT = "Schaut bei unserem Guest Artist @JacqJohnsonArt vorbei: https://linktr.ee/jacquelynjohnson 📣"
+PUNKTE_TEXT = "Wie der Punktestand derzeit ist, findet ihr unter: https://docs.google.com/spreadsheets/d/1DepvN5UvjXGkEum0E_TBc-hvW-HqDuDmPEJ70G2bRLo/edit?gid=0#gid=0"
 
 # Command texts [ENG]
 ENG_HELP_TEXT = "The following commands are available: !website_en, !faq_en, !programm_en, !charity_en, !donate_en, !goals_en, !bidwar_en, !uptime_en, !sponsor_en, !shop_en, !youtube_en, !twitter_en, !tiktok_en, !instagram_en, !mastodon_en, !bluesky_en, !musik_en 📣"
@@ -92,6 +93,7 @@ ENG_SPONSOR_TEXT = "The Week of Charity is sponsored by Cardgourmet! Check them 
 ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle 📣"
 ENG_WOCWM_TEXT = "All info surrounding the WoC-WM can be found here: https://weekofcharity.de/aktivitaeten?id=74 📣"
 ENG_ARTIST_TEXT = "Check out our guest artist @JacqJohnsonArt: https://linktr.ee/jacquelynjohnson 📣"
+ENG_PUNKTE_TEXT = "You can find the current score at: https://docs.google.com/spreadsheets/d/1DepvN5UvjXGkEum0E_TBc-hvW-HqDuDmPEJ70G2bRLo/edit?gid=0#gid=0"
 
 # Other texts
 GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen. 📣"
@@ -368,7 +370,7 @@ class Bot(commands.Bot):
         if language == "de":
             await ctx.send(GOALS_TEXT)
         elif language == "en":
-            await ctx.send(ENG_GOALS_TEXT)
+            await ctx.send(ENG_GOALS_TEXT)        
 
     @commands.command(aliases=["abstimmung", "bidwar_en", "abstimmung_en", "bidwars", "bidwars_en"])
     async def bidwar(self, ctx: commands.Context):
@@ -409,6 +411,14 @@ class Bot(commands.Bot):
             await ctx.send(WOCWM_TEXT)
         elif language == "en":
             await ctx.send(ENG_WOCWM_TEXT)
+
+    @commands.command(aliases=["punkte_en", "points", "points_en"])
+    async def punkte(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(PUNKTE_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_PUNKTE_TEXT)
 
     @commands.command(aliases=["guestartist_en", "guestart", "guestart _em", "jacq", "jacq_en"])
     async def guestartist(self, ctx: commands.Context):
