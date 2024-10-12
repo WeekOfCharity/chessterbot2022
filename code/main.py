@@ -412,7 +412,7 @@ class Bot(commands.Bot):
         elif language == "en":
             await ctx.send(ENG_WOCWM_TEXT)
 
-    @commands.command(aliases=["punkte_en", "points", "points_en"])
+    @commands.command(aliases=["punkte_en", "points", "points_en", "punktestand", "punktestand_en"])
     async def punkte(self, ctx: commands.Context):
         language = command_language(ctx)
         if language == "de":
