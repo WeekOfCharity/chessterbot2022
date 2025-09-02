@@ -17,7 +17,7 @@ import random
 import os
 import requests
 
-ORIG_CHANNEL_LIST = [
+CHANNEL_LIST = [
     'nislregen',
     'deraltan',
     'gumlong',
@@ -36,10 +36,6 @@ ORIG_CHANNEL_LIST = [
     'natakazie',
     'placedelynn',
     'jacqjohnsonart'
-]
-
-CHANNEL_LIST = [
-    'marlinwoc'
 ]
 
 YEAR = "2025"
