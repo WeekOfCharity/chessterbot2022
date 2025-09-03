@@ -71,9 +71,7 @@ INSTAGRAM_TEXT = "Folgt uns auf Instagram: https://www.instagram.com/weekofchari
 MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofcharity"
 BLUESKY_TEXT = "Folgt uns auf Bluesky: https://bsky.app/profile/chesster.weekofcharity.de"
 MUSIK_TEXT = "Den offiziellen Week of Charity Soundtrack findet ihr hier: https://weekofcharity.bandcamp.com"
-SPIELESHUFFLE_TEXT = "Alle Infos zum Spiele-Shuffle findet ihr hier: https://weekofcharity.de/spieleshuffle" # TODO MIGHT BE REMOVED
 WOCWM_TEXT = "Alle Infos zur WoC-WM findet ihr hier: https://weekofcharity.de/aktivitaeten?id=74"
-ARTIST_TEXT = "Schaut bei unserem Guest Artist @JacqJohnsonArt vorbei: https://linktr.ee/jacquelynjohnson" # TODO MIGHT CHANGE
 
 # Command texts [ENG]
 ENG_WOC_TEXT = "We are streaming for a week on various channels and collecting donations for a good cause! For more information, visit our website https://weekofcharity.de or type !help in the chat."
@@ -92,9 +90,7 @@ ENG_INSTAGRAM_TEXT = "Follow us on Instagram: https://www.instagram.com/weekofch
 ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@weekofcharity"
 ENG_BLUESKY_TEXT = "Follow us on Bluesky: https://bsky.app/profile/chesster.weekofcharity.de"
 ENG_MUSIK_TEXT = "You can find the official Week of Charity soundtrack here: https://weekofcharity.bandcamp.com"
-ENG_SPIELESHUFFLE_TEXT = "All info surrounding the Spiele-Shuffle can be found here: https://weekofcharity.de/spieleshuffle"
 ENG_WOCWM_TEXT = "All info surrounding the WoC-WM can be found here: https://weekofcharity.de/aktivitaeten?id=74"
-ENG_ARTIST_TEXT = "Check out our guest artist @JacqJohnsonArt: https://linktr.ee/jacquelynjohnson"
 
 # Other texts
 GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
@@ -406,14 +402,6 @@ class Bot(commands.Bot):
             await ctx.send(WOCWM_TEXT)
         elif language == "en":
             await ctx.send(ENG_WOCWM_TEXT)
-
-    @commands.command(aliases=["guestartist_en", "guestart", "guestart _em", "jacq", "jacq_en"])
-    async def guestartist(self, ctx: commands.Context):
-        language = command_language(ctx)
-        if language == "de":
-            await ctx.send(ARTIST_TEXT)
-        elif language == "en":
-            await ctx.send(ENG_ARTIST_TEXT)
             
 
     @commands.command()
