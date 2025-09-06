@@ -72,6 +72,7 @@ MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofchari
 BLUESKY_TEXT = "Folgt uns auf Bluesky: https://bsky.app/profile/chesster.weekofcharity.de"
 MUSIK_TEXT = "Den offiziellen Week of Charity Soundtrack findet ihr hier: https://weekofcharity.bandcamp.com"
 WOCWM_TEXT = "Alle Infos zur WoC-WM findet ihr hier: https://weekofcharity.de/aktivitaeten?id=74"
+GUESTARTIST_TEXT = "Text: Link"
 
 # Command texts [ENG]
 ENG_WOC_TEXT = "We are streaming for a week on various channels and collecting donations for a good cause! For more information, visit our website https://weekofcharity.de or type !help in the chat."
@@ -91,6 +92,7 @@ ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@week
 ENG_BLUESKY_TEXT = "Follow us on Bluesky: https://bsky.app/profile/chesster.weekofcharity.de"
 ENG_MUSIK_TEXT = "You can find the official Week of Charity soundtrack here: https://weekofcharity.bandcamp.com"
 ENG_WOCWM_TEXT = "All info surrounding the WoC-WM can be found here: https://weekofcharity.de/aktivitaeten?id=74"
+ENG_GUESTARTIST_TEXT = "Text: Link"
 
 # Other texts
 GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
@@ -402,6 +404,14 @@ class Bot(commands.Bot):
             await ctx.send(WOCWM_TEXT)
         elif language == "en":
             await ctx.send(ENG_WOCWM_TEXT)
+
+    @commands.command(aliases=["guestart_en", "guestartist", "guestartist_em", "artist", "artist_en", "art", "art_en"])
+    async def guestart(self, ctx: commands.Context):
+        language = command_language(ctx)
+        if language == "de":
+            await ctx.send(GUESTARTIST_TEXT)
+        elif language == "en":
+            await ctx.send(ENG_GUESTARTIST_TEXT)
             
 
     @commands.command()
