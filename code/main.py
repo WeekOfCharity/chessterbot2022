@@ -72,7 +72,7 @@ MASTODON_TEXT = "Hier gibt es die neusten Tröts: https://tech.lgbt/@weekofchari
 BLUESKY_TEXT = "Folgt uns auf Bluesky: https://bsky.app/profile/chesster.weekofcharity.de"
 MUSIK_TEXT = "Den offiziellen Week of Charity Soundtrack findet ihr hier: https://weekofcharity.bandcamp.com"
 WOCWM_TEXT = "Alle Infos zur WoC-WM findet ihr hier: https://weekofcharity.de/aktivitaeten?id=74"
-GUESTARTIST_TEXT = "Schaut bei unserer Zeichnerin Stella vorbei: https://x.com/stellatiria"
+GUESTARTIST_TEXT = "Schaut bei unserer Zeichnerin Stellatiria vorbei: https://x.com/stellatiria"
 
 # Command texts [ENG]
 ENG_WOC_TEXT = "We are streaming for a week on various channels and collecting donations for a good cause! For more information, visit our website https://weekofcharity.de or type !help in the chat."
@@ -92,7 +92,7 @@ ENG_MASTODON_TEXT = "Here you can find our latest toots: https://tech.lgbt/@week
 ENG_BLUESKY_TEXT = "Follow us on Bluesky: https://bsky.app/profile/chesster.weekofcharity.de"
 ENG_MUSIK_TEXT = "You can find the official Week of Charity soundtrack here: https://weekofcharity.bandcamp.com"
 ENG_WOCWM_TEXT = "All info surrounding the WoC-WM can be found here: https://weekofcharity.de/aktivitaeten?id=74"
-ENG_GUESTARTIST_TEXT = "Check out our artist Stella: https://x.com/stellatiria"
+ENG_GUESTARTIST_TEXT = "Check out our artist Stellatiria: https://x.com/stellatiria"
 
 # Other texts
 GERMAN_HELLO_TEXT = "Hallo, ich bin ChessterBot! Mit '!help' kannst du dir alle verfügbaren Commands anzeigen lassen."
