@@ -37,7 +37,8 @@ CHANNEL_LIST = [
     'piatralisch',
     'natakazie',
     'placedelynn',
-    'jacqjohnsonart'
+    'jacqjohnsonart',
+    'marlinwoc'
 ]
 
 YEAR = "2025"
