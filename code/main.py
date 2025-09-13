@@ -17,6 +17,8 @@ import random
 import os
 import requests
 
+import profanity
+
 CHANNEL_LIST = [
     'nislregen',
     'deraltan',
@@ -43,8 +45,8 @@ YEAR = "2025"
 # In Seconds
 MSG_FREQ = 60 * 20
 
-# https://www.epochconverter.com/ -- Sonntag, 14. September 2025 20:00:00 GMT+02:00
-START_TIMESTAMP = datetime.fromtimestamp(1757872800)
+# https://www.epochconverter.com/ -- Sonntag, 14. September 2025 18:00:00 GMT+02:00
+START_TIMESTAMP = datetime.fromtimestamp(1757865600)
 
 WOC_START_JUST_NOW_TEXT = "Die Week of Charity hat gerade begonnen!"
 WOC_START_IN_FUTURE_TEXT = f"Die Week of Charity {YEAR} started bald!"
@@ -456,7 +458,18 @@ class Bot(commands.Bot):
 
         user_message = ctx.message.content.removeprefix("!txt").removeprefix("!text").lstrip()
         user_message = user_message[:70]
-        data = {'user': ctx.author.name, 'message': user_message, 'channel': ctx.message.channel.name}
+        bad_word = profanity.findBadWord(user_message)
+
+        bot_comment = "" if bad_word is None else f'"{bad_word}" is a banned word'
+        status = "shown" if bad_word is None else "detected_bad_word"
+
+        data = {
+            'user': ctx.author.name,
+            'message': user_message,
+            'channel': ctx.message.channel.name,
+            'bot_comment': bot_comment,
+            'status': status,
+        }
         url = f"{self.backend_api_url}/items/chat_document_messages"
         headers = {"Authorization": f"Bearer {self.backend_access_token}"}
 
