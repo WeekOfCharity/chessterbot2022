@@ -1,6 +1,22 @@
 import re
+import os
 
 SUBSTITUTIONS = [
+  (".", " "),
+  ("-", " "),
+  ("–", " "),
+  ("—", " "),
+  ("−", " "),
+  ("/", " "),
+  ("(", " "),
+  (")", " "),
+  ("<", " "),
+  (">", " "),
+  ("[", " "),
+  ("]", " "),
+  ("{", " "),
+  ("}", " "),
+  ("?", " "),
   ("@", "a"),
   ("Д", "a"),
   ("4", "a"),
@@ -65,10 +81,12 @@ substitution_table = str.maketrans(substitution_from, substitution_to)
 BAD_WORDS = []
 BLACKLIST_EXACT_WORDS = []
 
-with open('bad_words.txt') as f:
+script_dir = os.path.dirname(__file__)
+
+with open(os.path.join(script_dir, 'bad_words.txt')) as f:
   for line in f: BAD_WORDS.append(line.rstrip("\n"))
 
-with open('blacklist_exact.txt') as f:
+with open(os.path.join(script_dir, 'blacklist_exact.txt')) as f:
   for line in f: BLACKLIST_EXACT_WORDS.append(line.rstrip("\n"))
 
 def findBadWord(message: str):
@@ -83,7 +101,12 @@ def findBadWord(message: str):
   stripped_message = substituted_message.strip()
 
   for word in BLACKLIST_EXACT_WORDS:
-    if stripped_message.startswith(word) or stripped_message.endswith(word) or f" {word} " in stripped_message:
+    if (
+      stripped_message.startswith(word) or
+      stripped_message.endswith(word) or
+      f" {word} " in stripped_message or
+      f" {word}i" in stripped_message
+    ):
       return word
     
   return None
